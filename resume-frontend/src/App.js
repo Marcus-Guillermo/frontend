@@ -1,9 +1,12 @@
 import './App.css';
 import Button from 'react-bootstrap/Button';
+import { Route, Switch, Link } from "react-router-dom";
 import Navbar from './components/NavBar'
 import Homepage from './components/Homepage';
-import { Route, Switch, Link } from "react-router-dom";
 import Generate from './components/Generate';
+import Accounts from './components/Accounts';
+import Contact from './components/Contact';
+
 
 
 
@@ -19,15 +22,17 @@ function App() {
        <Navbar></Navbar>
       </header>
       <Link to="/">Home</Link>
-      <Link to="/generate">
-        <Button>
-        Generate
-        </Button>
-      </Link>
+     
+     
+
       <main>
       <Switch>
         <Route component={Homepage} exact path="/" />
         <Route component={Generate} path="/generate" />
+        <Route component={Accounts} path="/accounts" />
+        <Route component={Contact} path="/contact-us" />
+
+
       </Switch>
       </main>
       </div>
