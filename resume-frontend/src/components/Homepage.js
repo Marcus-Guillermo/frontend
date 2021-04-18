@@ -1,6 +1,6 @@
 import React from 'react';
 import './Homepage.css'
-import { Navbar, Button} from 'react-bootstrap';
+import { Navbar, Button, Card} from 'react-bootstrap';
 import { Route, Switch, Link } from "react-router-dom";
 import Generate from './Generate';
 
@@ -13,7 +13,7 @@ const Homepage = () => {
             <h4 className="welcomeMessage">Resu.me is the easiest solution for cover letters and resumes.
                 <br></br> Simply input your credentials and contact information - We handle the rest!</h4>
                 <Link className= "genLeadButton" to="/generate">
-                <button >Let's make a Resume</button>
+                <Button >Let's make a Resume</Button>
                 </Link>
             <h2 className="servicesBanner">Score the job you deserve with the help of our tools</h2>
             

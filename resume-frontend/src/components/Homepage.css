@@ -24,7 +24,7 @@
     grid-row-start: 3;
 }
 
-.servicesBanner {
+.servicesBanner { 
     grid-row-start: 5;
     grid-column-start: 2;
     margin-top: 10%;
@@ -37,3 +37,4 @@
 .servicesContainer {
     grid-row-start: 7;
 }
+

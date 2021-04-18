@@ -2,22 +2,25 @@ import React from 'react';
 import { Navbar, Button} from 'react-bootstrap';
 import { Route, Switch, Link } from "react-router-dom";
 import './NavBar.css'
+import Homepage from './Homepage';
+
 
 const navbar = () => {
     return (
     <div className="navbar">
         <Link to="/accounts">
-            <button className = "loginButton">Create an Account</button>
+            <Button className = "loginButton">Create an Account</Button>
         </Link>
-        <button>Login</button>
-        <button>Features</button>
+
+        
+      
+        <Button>Features</Button>
         <Link to="/contact-us">
-            <button className = "contactButton">Contact Us</button>
+            <Button className = "contactButton">Contact Us</Button>
         </Link>
         
 
-        
-        
+
     </div>
     );
 };

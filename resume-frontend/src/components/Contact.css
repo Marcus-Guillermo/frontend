@@ -1,0 +1,14 @@
+.accountsBody {
+    display:grid;
+    grid-template-rows: .25fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr; 
+}
+.informationalPanel {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.formBody {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}

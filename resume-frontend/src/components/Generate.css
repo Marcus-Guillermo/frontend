@@ -20,7 +20,7 @@
 }
 
 .inputField {
-    background: navy;
+    /* background: navy; */
     height: 300px;
     grid-row-start: 3;
     grid-column-start: 4;
