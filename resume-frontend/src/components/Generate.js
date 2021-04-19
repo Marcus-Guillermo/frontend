@@ -2,22 +2,47 @@ import React from "react";
 import Navbar from "./NavBar";
 import "./Generate.css";
 import { Form, Jumbotron, Button, Modal, Col, Row } from "react-bootstrap";
+import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
+import ReactPDF from '@react-pdf/renderer';
+
 
 const Generate = () => {
+    const styles = StyleSheet.create({
+        page: {
+          flexDirection: 'row',
+          backgroundColor: '#E4E4E4'
+        },
+        section: {
+          margin: 10,
+          padding: 10,
+          flexGrow: 1
+        }
+      });
+
+    //   ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
+
+
   return (
     <div className="generateBody">
       <h1 className="generateBanner">Here's your Cover Letter</h1>
-      <div className="generateRender">PLACEHOLDER</div>
+      <div className="generateRender">
+    <PDFViewer>
+        <Document>
+        <Page size="A4" style={styles.page}>
+        <View style={styles.section}>
+            <Text>EXAMPLE PDF TEXT HERE</Text>
+        </View>
+        <View style={styles.section}>
+            <Text>PART 2 TEXT HERE</Text>
+        </View>
+        </Page>
+    </Document>
+    </PDFViewer>
+      
+      </div>
       <h1 className="inputBanner">Let's Get Some Info</h1>
       <div className="inputField">
     
-      {/* <ReactScrollableList
-  listItems=[...]
-  heightOfItem={30}
-  maxItemsToRender={50}
-  style={{ color: '#333' }}
-/> */}
-
 
         <Form>
           <Form.Row>
