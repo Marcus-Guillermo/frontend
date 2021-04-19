@@ -57,8 +57,8 @@ const Generate = () => {
 
             {/* USER CONTACT INFORMATION */}
             <Text style={styles.myContact}> Marvin Example</Text>
-            <Text style={styles.myContact}> 12 Shock Road, Hinderland, NY 84560</Text>
-            <Text style={styles.myContact}> Cell: (555) 474-65378</Text>
+            {/* <Text style={styles.myContact}> 12 Shock Road, Hinderland, NY 84560</Text> */}
+            <Text style={styles.myContact}> Cell: (555) 474-5378</Text>
             <Text style={styles.myContact}> marvbale@example.com</Text>
             {/* Today's Date */}
             <Text style={styles.date}> April 19th, 2021</Text>
@@ -79,7 +79,6 @@ const Generate = () => {
             <Text style={styles.signOff}> I look forward to speaking with you soon.</Text>
             <Text style={styles.signOff}> Marvin Example</Text>
 
-    
         </Page>
     </Document>
     </PDFViewer>
@@ -91,49 +90,44 @@ const Generate = () => {
 
         <Form>
           <Form.Row>
-            <Form.Group as={Row} controlId="formGridMailingAddress">
+            <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Your Name</Form.Label>
               <Form.Control placeholder="Your Name" />
             </Form.Group>
 
-            <Form.Group as={Row} controlId="formGridEmail">
-              <Form.Label>Your Contact Information</Form.Label>
-              <Form.Control type="email" placeholder="Email, Phone Number" />
-            </Form.Group>
-          </Form.Row>
-
-          <Form.Group controlId="formGridAddress1">
+            <Form.Group as={Col} controlId="formTodaysDate">
             <Form.Label>Today's Date</Form.Label>
-            <Form.Control placeholder="What is Today's Date?" />
+            <Form.Control placeholder="April 19th, 2021" />
           </Form.Group>
 
-          <Form.Group controlId="formGridAddress2">
-            <Form.Label>Mailing Address Cont.</Form.Label>
-            <Form.Control placeholder="Apartment, studio, or floor" />
+          </Form.Row>
+          <Form.Group  controlId="formGridEmail">
+              <Form.Label> Your Email Address</Form.Label>
+              <Form.Control type="email" placeholder="janedoe@gmail.com" />
+            </Form.Group>
+          
+          {/* <Form.Group controlId="formGridAddress1">
+            <Form.Label>What is your preferred mailing address?</Form.Label>
+            <Form.Control placeholder="i.e. 1600 Pennsylvania Avenue NW, Washington, DC 20500" />
+          </Form.Group> */}
+         
+          <Form.Group controlId="formGridAddress1">
+            <Form.Label>Let's write a saultation for your cover letter</Form.Label>
+            <Form.Control placeholder="Dear Hiring Manager, To whom it may concern, etc" />
           </Form.Group>
 
           <Form.Row>
-            <Form.Group as={Row} controlId="formGridCity">
-              <Form.Label>City</Form.Label>
-              <Form.Control />
-            </Form.Group>
-
-            <Form.Group as={Row} controlId="formGridState">
-              <Form.Label>Salutation</Form.Label>
-              <Form.Control as="select" defaultValue="Choose...">
-                <option>Choose...</option>
-                <option>To whom it may concern,</option>
-                <option>Dear Hiring Manager,</option>
-                <option>Dear Sir or Madam,</option>
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group as={Row} controlId="formGridZip">
-              <Form.Label>Company Name</Form.Label>
-              <Form.Control defaultValue="Where are you applying?" />
-            </Form.Group>
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Let's write your cover letter's intro paragraph</Form.Label>
+                <Form.Control as="textarea" rows={4} placeholder="It is with great interest..." />
+        </Form.Group>
           </Form.Row>
-
+          <Form.Row>
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+                <Form.Label>Let's write your cover letter's body paragraph</Form.Label>
+                <Form.Control as="textarea" rows={4} placeholder="I am currently a software engineer..." />
+        </Form.Group>
+          </Form.Row>
          
             
 
