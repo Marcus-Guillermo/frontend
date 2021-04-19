@@ -1,0 +1,40 @@
+
+.welcomeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr .5fr 2fr 1fr 2fr;
+    font-family: 'Inter', sans-serif;
+
+}
+
+.welcomeBanner {
+    font-size: 70px;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.genLeadButton {
+    grid-column-start: 2;
+    grid-row-start: 4;
+    width: 100%;
+}
+
+.welcomeMessage {
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+.servicesBanner { 
+    grid-row-start: 5;
+    grid-column-start: 2;
+    margin-top: 10%;
+}
+.servicesSubBanner {
+    grid-row-start: 6;
+    grid-column-start: 2;
+}
+
+.servicesContainer {
+    grid-row-start: 7;
+}
+
