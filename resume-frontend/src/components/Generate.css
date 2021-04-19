@@ -1,7 +1,7 @@
 .generateBody {
     display: grid;
     grid-template-columns: .25fr 2fr .25fr 1fr .25fr;
-    grid-template-rows: 1fr 1fr 3fr .5fr;
+    grid-template-rows: .5fr 1fr 3fr .5fr;
 }
 iframe {
     width: 1000px;

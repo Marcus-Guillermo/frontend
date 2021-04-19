@@ -2,7 +2,7 @@
 .welcomeContainer {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: 1fr 2fr 2fr .5fr 2fr 1fr 2fr;
+    grid-template-rows: 1fr 2fr 2fr .5fr .5fr 1fr 2fr;
     font-family: 'Inter', sans-serif;
 
 }
@@ -17,6 +17,13 @@
     grid-column-start: 2;
     grid-row-start: 4;
     width: 100%;
+}
+
+.loginButton {
+    margin-top: 10px;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    /* width: 100%; */
 }
 
 .welcomeMessage {
