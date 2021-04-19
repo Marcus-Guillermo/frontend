@@ -12,40 +12,42 @@ const Generate = () => {
           flexDirection: 'row',
           backgroundColor: '#E4E4E4'
         },
-        section: {
-          margin: 20,
-          padding: 0,
-          flexGrow: 1
+        body: {
+            paddingTop: 35,
+            paddingBottom: 65,
+            paddingHorizontal: 35,
         },
+        title: {
+            fontSize: 48,
+            marginTop: 60,
+            textAlign: "center"},
+
         header: {
             fontSize: 52,
             marginBottom: 20,
             textAlign: 'center'
         },
-        title: {
-            fontSize: 48,
-            marginTop: 20,
-            textAlign: "center"
-        }
+        section: {
+          margin: 20,
+          padding: 0,
+          flexGrow: 1
+        },
         
       });
-
-    //   ReactPDF.render(<MyDocument />, `${__dirname}/example.pdf`);
-
 
   return (
     <div className="generateBody">
       <h1 className="generateBanner">Here's your Cover Letter</h1>
       <div className="generateRender">
-    <PDFViewer>
+    <PDFViewer className="viewer">
         <Document>
-        <Page size="A4" style={styles.page}>
+        <Page size="A4" style={styles.body}>
             <Text style={styles.header} fixed>
                 Created with React-pdf
             </Text>
-            <Text style={styles.title}>TITLE</Text>
+            <Text style={styles.title}>TITLE EXAMPLE TEXT HERE</Text>
         <View style={styles.section}>
-            <Text></Text>
+            <Text>SECTION</Text>
         </View>
         <View style={styles.section}>
             <Text></Text>
@@ -61,20 +63,20 @@ const Generate = () => {
 
         <Form>
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-            </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridMailingAddress">
+            <Form.Group as={Row} controlId="formGridMailingAddress">
               <Form.Label>Your Name</Form.Label>
               <Form.Control placeholder="Your Name" />
+            </Form.Group>
+
+            <Form.Group as={Row} controlId="formGridEmail">
+              <Form.Label>Your Contact Information</Form.Label>
+              <Form.Control type="email" placeholder="Email, Phone Number" />
             </Form.Group>
           </Form.Row>
 
           <Form.Group controlId="formGridAddress1">
-            <Form.Label>Mailing Address</Form.Label>
-            <Form.Control placeholder="1234 Main St" />
+            <Form.Label>Today's Date</Form.Label>
+            <Form.Control placeholder="What is Today's Date?" />
           </Form.Group>
 
           <Form.Group controlId="formGridAddress2">
@@ -104,43 +106,7 @@ const Generate = () => {
             </Form.Group>
           </Form.Row>
 
-          <Form.Row>
-            <Form.Group as={Row} controlId="formGridZip">
-              <Form.Label>Position Title</Form.Label>
-              <Form.Control defaultValue="What is the tile of this role?" />
-            </Form.Group>
-          </Form.Row>
-
-          <Form.Row>
-            <Form.Group as={Row} controlId="formGridZip">
-              <Form.Label>Where did you find this role?</Form.Label>
-              <Form.Control defaultValue="LinkedIn, Referral from a friend, etc..." />
-            </Form.Group>
-          </Form.Row>
-
-          <Form.Group id="formGridCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
-
-          <h2>Let's learn more about you!</h2>
-
-          <Form.Row>
-            <Form.Group as={Row} controlId="formGridZip">
-              <Form.Label>What's your current role?</Form.Label>
-              <Form.Control defaultValue="Software Engineer, Web Developer, etc" />
-            </Form.Group>
-          </Form.Row>
-          
-          <Form.Group as={Row} controlId="formGridState">
-              <Form.Label>I am...</Form.Label>
-              <Form.Control as="select" defaultValue="Choose...">
-                <option>Choose...</option>
-                <option> an experienced </option>
-                <option> a</option>
-                <option>Dear Sir or Madam,</option>
-              </Form.Control>
-            </Form.Group>
-
+         
             
 
           <Button variant="primary" type="submit">
@@ -151,56 +117,6 @@ const Generate = () => {
     </div>
   );
 };
-
-// const styles = StyleSheet.create({
-//     body: {
-//       paddingTop: 35,
-//       paddingBottom: 65,
-//       paddingHorizontal: 35,
-//     },
-//     title: {
-//       fontSize: 24,
-//       textAlign: 'center',
-//       fontFamily: 'Oswald'
-//     },
-//     author: {
-//       fontSize: 12,
-//       textAlign: 'center',
-//       marginBottom: 40,
-//     },
-//     subtitle: {
-//       fontSize: 18,
-//       margin: 12,
-//       fontFamily: 'Oswald'
-//     },
-//     text: {
-//       margin: 12,
-//       fontSize: 14,
-//       textAlign: 'justify',
-//       fontFamily: 'Times-Roman'
-//     },
-//     image: {
-//       marginVertical: 15,
-//       marginHorizontal: 100,
-//     },
-//     header: {
-//       fontSize: 52,
-//       marginBottom: 20,
-//       textAlign: 'center',
-//       color: 'grey',
-//     },
-//     pageNumber: {
-//       position: 'absolute',
-//       fontSize: 12,
-//       bottom: 30,
-//       left: 0,
-//       right: 0,
-//       textAlign: 'center',
-//       color: 'grey',
-//     },
-//   });
-
-// //   ReactPDF.render(<Quixote />);
 
 
 export default Generate;
