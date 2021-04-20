@@ -61,7 +61,7 @@ const Generate = () => {
             setDate(event.target.value)}
 
     //Email
-   const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("")
     const onChangeEmail = (event) => {
             event.preventDefault()
             setEmail(event.target.value)}
