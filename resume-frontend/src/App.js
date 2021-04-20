@@ -6,7 +6,7 @@ import Homepage from './components/Homepage';
 import Generate from './components/Generate';
 import Accounts from './components/Accounts';
 import Contact from './components/Contact';
-
+import Generate_Resume from './components/Generate_Resume';
 
 
 
@@ -31,6 +31,7 @@ function App() {
         <Route component={Generate} path="/generate" />
         <Route component={Accounts} path="/accounts" />
         <Route component={Contact} path="/contact-us" />
+        <Route component={Generate_Resume} path="/generate-resume" />
 
 
       </Switch>

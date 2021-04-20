@@ -1,5 +1,4 @@
-import React from "react";
-import Navbar from "./NavBar";
+import React, { useState, useEffect } from "react";
 import "./Generate.css";
 import { Form, Jumbotron, Button, Modal, Col, Row } from "react-bootstrap";
 import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
@@ -47,65 +46,132 @@ const Generate = () => {
         
       });
 
+    //Let's establish our state environment 
+    
+    //User Name
+    const [value, setValue] = useState("")
+    const onChange = (event) => {
+        event.preventDefault()
+        setValue(event.target.value)}
+
+    //Date
+    const [date, setDate] = useState([""])
+    const onChangeDate = (event) => {
+            event.preventDefault()
+            setDate(event.target.value)}
+
+    //Email
+   const [email, setEmail] = useState("")
+    const onChangeEmail = (event) => {
+            event.preventDefault()
+            setEmail(event.target.value)}
+
+    //Phone
+    const [phone, setPhone] = useState("")
+    const onChangePhone = (event) => {
+        event.preventDefault()
+        setPhone(event.target.value)}
+
+    //Hiring Manager Salutation
+    const [salutation, setSalutation] = useState("")
+    const onChangeSalute = (event) => {
+        event.preventDefault()
+        setSalutation(event.target.value)}
+
+    //Intro Paragraph
+    const [introParagraph, setIntroParagraph] = useState("")
+    const onChangeIntro = (event) => {
+        event.preventDefault()
+        setIntroParagraph(event.target.value)}
+    
+    //Body Paragraph
+    const [bodyParagraph, setBodyParagraph] = useState("")
+    const onChangeBody = (event) => {
+        event.preventDefault()
+        setBodyParagraph(event.target.value)}
+    
+    //Call-to-Action
+    const [cta, setCta] = useState("")
+    const onChangeCTA = (event) => {
+        event.preventDefault()
+        setCta(event.target.value)}
+
+    //Send Off
+    const [sendOff, setSendOff] = useState("")
+    const onSendOffChange = (event) => {
+        event.preventDefault()
+        setSendOff(event.target.value)}
+
+    //Modal Controls
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
   return (
     <div className="generateBody">
-      <h1 className="generateBanner">Here's your Cover Letter</h1>
+      <h1 className="generateBanner">Here's your Cover Letter:</h1>
       <div className="generateRender">
     <PDFViewer className="viewer">
         <Document>
         <Page size="A4" style={styles.body}>
 
             {/* USER CONTACT INFORMATION */}
-            <Text style={styles.myContact}> Marvin Example</Text>
+            <Text style={styles.myContact}> {value}</Text>
             {/* <Text style={styles.myContact}> 12 Shock Road, Hinderland, NY 84560</Text> */}
-            <Text style={styles.myContact}> Cell: (555) 474-5378</Text>
-            <Text style={styles.myContact}> marvbale@example.com</Text>
+            <Text style={styles.myContact}>{phone}</Text>
+            <Text style={styles.myContact}> {email}</Text>
             {/* Today's Date */}
-            <Text style={styles.date}> April 19th, 2021</Text>
+            <Text style={styles.date}>{date}</Text>
 
             {/* Salutation */}
-            <Text style={styles.salutation}> Dear Hiring Manager,</Text>
+            <Text style={styles.salutation}>{salutation}</Text>
 
             {/* Intro Paragraph */}
-            <Text style={styles.section}> It is with deep interest that I submit my application for the Software Engineer post as advertised on softtoolhr.com. The position is definitely an ideal chance in view if my strong technical expertise, over 10 years' experience in various areas across security, network engineering, software coding, architecture and IT project supervision and management.</Text>
+            <Text style={styles.section}>{introParagraph}</Text>
 
             {/* Body Paragraph */}
-            <Text style={styles.section}> I am currently the Jackheat South Town Technologies Chief Software Engineer, a role I have held for six years. In this position I lead and supervise technology projects, performance and quality enhancements and craft product offers with an impact on the organization's bottom line. Through my increasing experience and progressive professional development my managed skills in IT have been refined and business insight enhanced resulting in inspired IT solutions, improved profits and cost reductions. All these accomplishments are directly through successful team work and collaborations with diverse stakeholders, efficient team management and calculated allocation of resources.</Text>
+            <Text style={styles.section}>{bodyParagraph}</Text>
 
             {/* Call to Action */}
-            <Text style={styles.section}> The enclosed CV offers a detailed picture of my accomplishments, expertise and qualifications in Software Engineering. I am reachable by mail or phone to discuss your software engineering needs and expectations and how my skills can meet these requirements</Text>
+            <Text style={styles.section}>{cta}</Text>
 
             {/* Sign-Off */}
-            <Text style={styles.signOff}> I look forward to speaking with you soon.</Text>
-            <Text style={styles.signOff}> Marvin Example</Text>
+            <Text style={styles.signOff}>{sendOff}</Text>
+            <Text style={styles.signOff}>{value}</Text>
 
         </Page>
     </Document>
     </PDFViewer>
       
       </div>
-      <h1 className="inputBanner">Let's Get Some Info</h1>
+      <h1 className="inputBanner">Let's Get Some Info:</h1>
       <div className="inputField">
-    
 
         <Form>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>Your Name</Form.Label>
-              <Form.Control placeholder="Your Name" />
+              <Form.Control onChange={onChange} value={value} placeholder="Your Name" />
+              {/* {selectText} */}
             </Form.Group>
 
             <Form.Group as={Col} controlId="formTodaysDate">
             <Form.Label>Today's Date</Form.Label>
-            <Form.Control placeholder="April 19th, 2021" />
+            <Form.Control onChange={onChangeDate} value={date} placeholder="April 19th, 2021" />
           </Form.Group>
 
           </Form.Row>
-          <Form.Group  controlId="formGridEmail">
+          <Form.Row>
+          <Form.Group as={Col}  controlId="formGridEmail">
               <Form.Label> Your Email Address</Form.Label>
-              <Form.Control type="email" placeholder="janedoe@gmail.com" />
+              <Form.Control onChange={onChangeEmail} value={email} type="email" placeholder="janedoe@gmail.com" />
             </Form.Group>
-          
+
+            <Form.Group as={Col}  controlId="formGridPhone">
+              <Form.Label> Preferred Phone Number</Form.Label>
+              <Form.Control onChange={onChangePhone} value={phone} type="phone" placeholder="i.e. 1-212-867-5309" />
+            </Form.Group>
+          </Form.Row>
           {/* <Form.Group controlId="formGridAddress1">
             <Form.Label>What is your preferred mailing address?</Form.Label>
             <Form.Control placeholder="i.e. 1600 Pennsylvania Avenue NW, Washington, DC 20500" />
@@ -113,28 +179,52 @@ const Generate = () => {
          
           <Form.Group controlId="formGridAddress1">
             <Form.Label>Let's write a saultation for your cover letter</Form.Label>
-            <Form.Control placeholder="Dear Hiring Manager, To whom it may concern, etc" />
+            <Form.Control onChange={onChangeSalute} value={salutation} placeholder="i.e. Dear Hiring Manager, To whom it may concern, etc" />
           </Form.Group>
 
           <Form.Row>
           <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Let's write your cover letter's intro paragraph</Form.Label>
-                <Form.Control as="textarea" rows={4} placeholder="It is with great interest..." />
+                <Form.Control as="textarea" rows={4} onChange={onChangeIntro} value={introParagraph} placeholder="i.e. It is with great interest..." />
         </Form.Group>
           </Form.Row>
           <Form.Row>
           <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Let's write your cover letter's body paragraph</Form.Label>
-                <Form.Control as="textarea" rows={4} placeholder="I am currently a software engineer..." />
+                <Form.Control as="textarea" rows={4} onChange={onChangeBody} value={bodyParagraph} placeholder="i.e. I am currently a software engineer..." />
         </Form.Group>
           </Form.Row>
+
+          <Form.Group controlId="formGridAddress1">
+            <Form.Label>Let's write a call-to-action</Form.Label>
+            <Form.Control onChange={onChangeCTA} value={cta} placeholder="i.e. I am reacheable by mail or phone to further discuss..." />
+          </Form.Group>
+
+          <Form.Group controlId="formGridAddress1">
+            <Form.Label>Let's write a send-off</Form.Label>
+            <Form.Control onChange={onSendOffChange} value={sendOff} placeholder="i.e. I look forward to speaking with you soon." />
+          </Form.Group>
          
             
 
-          <Button variant="primary" type="submit">
-            Submit
+          <Button onClick={handleShow} variant="primary">
+           All done!
           </Button>
         </Form>
+      
+        <Modal show={show} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>That cover letter looks great!</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                To save your cover letter as a PDF, simply click the download icon on the rendered toolbar above the cover letter. It will download to your browser. <br></br>Good luck with your applications!
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button> 
+            </Modal.Footer>
+        </Modal>
       </div>
     </div>
   );
