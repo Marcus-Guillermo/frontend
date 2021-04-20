@@ -14,18 +14,47 @@ const Generate_Resume = () => {
           backgroundColor: '#E4E4E4'
         },
         body: {
-            paddingTop: 35,
-            paddingBottom: 65,
+            paddingTop: 30,
+            paddingBottom: 30,
             paddingHorizontal: 35,
         },
         header: {
-            fontSize: 24,
+            fontSize: 22,
             textAlign: "center"
         },
-        linkedin: {
+        headerDetail: {
+            fontSize: 12,
+            textAlign: "left"
+        },
+        contact: {
+            fontSize: 14,
+            textAlign: "center"
+        },
+        Banner: {
             fontSize: 16,
-            textAlign: "center"
+            marginTop: 20,
+            borderBottom: 1,
         },
+        skillsRow: {
+            fontSize: 12,
+            marginTop: 5,
+        },
+        entryHeader: {
+            fontSize: 14,
+            fontWeight: 'bold',
+            marginTop: 5,
+        },
+        entry: {
+            fontSize: 12,
+            marginTop: 5,
+        },
+        date: {
+            fontSize: 14,
+            textAlign: "right",
+            marginTop: -15,
+
+        }
+        
        
         
         
@@ -37,29 +66,73 @@ const Generate_Resume = () => {
         <Document>
         <Page size="A4" style={styles.body}>
 
-            {/* USER CONTACT INFORMATION */}
+            {/* HEADER & USER CONTACT INFORMATION */}
             <Text style={styles.header}> EXAMPLE NAME HERE</Text>
+            <Text style={styles.contact}> Dallas, Texas | 867-5309</Text>
+            <Text style={styles.contact}>example@gmail.com | LinkedIn </Text>
+            
+            {/* Skills Section*/}
+            <Text style={styles.Banner}>SKILLS AND CERTIFICATIONS</Text>
+            <Text style={styles.skillsRow}>Technical Skills: React, React Native, JavaScript</Text>
+            <Text style={styles.skillsRow}>Certifications: Dev of the Year, 2018</Text>
+            {/* Project A */}
+            <Text style={styles.Banner}>PROJECT PORTFOLIO</Text>
+            <Text style={styles.entryHeader}>Project A</Text> 
+            <Text style={styles.date}>DATE</Text> 
+            <Text style={styles.entry}>• Engineered a mobile app using React Native to assist students on the job hunt</Text>
+            <Text style={styles.entry}>• Presented Project to Cohort at General Assembly Software Engineering Immersive Bootcamp</Text>
+            {/* Project B */}
+            <Text style={styles.entryHeader}>Project B</Text>
+            <Text style={styles.date}>DATE</Text> 
+            <Text style={styles.entry}>• Engineered a mobile app using React Native to assist students on the job hunt</Text>
+            <Text style={styles.entry}>• Presented Project to Cohort at General Assembly Software Engineering Immersive Bootcamp</Text>
+            {/* Project C */}
+            <Text style={styles.entryHeader}>Project C</Text>
+            <Text style={styles.date}>DATE</Text> 
+            <Text style={styles.entry}>• Engineered a mobile app using React Native to assist students on the job hunt</Text>
+            <Text style={styles.entry}>• Presented Project to Cohort at General Assembly Software Engineering Immersive Bootcamp</Text>
+            
 
-            <Text style={styles.linkedin}>LinkedIn | example@gmail.com | 867-5309</Text>
-            <Text style={styles.myContact}> example</Text>
-            {/* Today's Date */}
-            <Text style={styles.date}>example</Text>
 
-            {/* Salutation */}
-            <Text style={styles.salutation}>example</Text>
+            {/* Professional Experience */}
+            <Text style={styles.Banner}>Professional Experience</Text>
+            {/* Role A */}
+            <Text style={styles.entryHeader}>Role A</Text>
+            <Text style={styles.date}>DATE</Text> 
+            <Text style={styles.headerDetail}>Senior Software Engineer</Text>
 
-            {/* Intro Paragraph */}
-            <Text style={styles.section}>example</Text>
+            <Text style={styles.entry}>• Provided Hands-on instruction for students learning Computer Science, mathematics in addition to programming fundamentals</Text>
+            <Text style={styles.entry}>• Engineered a mobile app using React Native to assist students on the job hunt</Text>
+            <Text style={styles.entry}>• Responsible for updating curriculum with newest materials every semester-end</Text>
+            <Text style={styles.entry}>• Presented Project to Cohort at General Assembly Software Engineering Immersive Bootcamp</Text>
 
-            {/* Body Paragraph */}
-            <Text style={styles.section}>example</Text>
+            {/* Role B */}
+            <Text style={styles.entryHeader}>Role B</Text>
+            <Text style={styles.date}>DATE</Text> 
+            <Text style={styles.headerDetail}>Software Engineer</Text>
 
-            {/* Call to Action */}
-            <Text style={styles.section}>example</Text>
+            <Text style={styles.entry}>• Provided Hands-on instruction for students learning Computer Science, mathematics in addition to programming fundamentals</Text>
+            <Text style={styles.entry}>• Responsible for updating curriculum with newest materials every semester-end</Text>
+            {/* Role C */}
+            <Text style={styles.entryHeader}>Role C</Text>
+            <Text style={styles.date}>DATE</Text> 
+            <Text style={styles.headerDetail}>Instructor</Text>
 
-            {/* Sign-Off */}
-            <Text style={styles.signOff}>example</Text>
-            <Text style={styles.signOff}>example</Text>
+            <Text style={styles.entry}>• Provided Hands-on instruction for students learning Computer Science, mathematics in addition to programming fundamentals</Text>
+            <Text style={styles.entry}>• Responsible for updating curriculum with newest materials every semester-end</Text>
+            
+            {/* Education */}
+            <Text style={styles.Banner}>Education</Text>
+            <Text style={styles.entryHeader}>Example University</Text>
+            <Text style={styles.date}>DATE</Text> 
+            <Text style={styles.entry}>Bachelor of Arts in Computer Science</Text>
+            <Text style={styles.entry}>GPA: 3.7/4.0; Major GPA: 3.9/4.0</Text>
+
+
+
+
+
+          
 
         </Page>
     </Document>
