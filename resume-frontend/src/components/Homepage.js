@@ -8,7 +8,7 @@ import Generate from './Generate';
 
 const Homepage = () => {
 
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

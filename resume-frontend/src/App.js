@@ -4,40 +4,38 @@ import { Route, Switch, Link } from "react-router-dom";
 import Navbar from './components/NavBar'
 import Homepage from './components/Homepage';
 import Generate from './components/Generate';
-import Accounts from './components/Accounts';
+// import Accounts from './components/SignUp';
 import Contact from './components/Contact';
 
-
+// Firebase authentication
+import SignUp from './components/SignUp'
+import { AuthProvider } from './Auth';
+import PrivateRoute from './PrivateRoute'
 
 
 function App() {
   return (
-    <div className="App">
-      <div>
-       <nav>
-        
-      </nav>
-      <header className="App-header">
-        
-       <Navbar></Navbar>
-      </header>
-      <Link to="/">Home</Link>
-     
-     
+    <div className='App'>
+				<div>
+					<nav></nav>
+					<header className='App-header'>
+						<Navbar></Navbar>
+					</header>
+					<Link to='/'>Home</Link>
 
-      <main>
-      <Switch>
-        <Route component={Homepage} exact path="/" />
-        <Route component={Generate} path="/generate" />
-        <Route component={Accounts} path="/accounts" />
-        <Route component={Contact} path="/contact-us" />
-
-
-      </Switch>
-      </main>
-      </div>
-    </div>
-  );
+    <AuthProvider>
+					<main>
+						<Switch>
+							<PrivateRoute component={Homepage} exact path='/' />
+							<Route component={Contact} path='/contact-us' />
+							<Route component={Generate} path='/generate' />
+							<Route component={SignUp} path='/signup' />
+						</Switch>
+					</main>
+		</AuthProvider>
+				</div>
+			</div>
+	);
 }
 
 export default App;
