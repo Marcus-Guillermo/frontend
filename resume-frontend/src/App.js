@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 // Firebase authentication
 import SignUp from './components/SignUp'
 import { AuthProvider } from './Auth';
-import PrivateRoute from './PrivateRoute'
+// import PrivateRoute from './PrivateRoute'
 
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
     <AuthProvider>
 					<main>
 						<Switch>
-							<PrivateRoute component={Homepage} exact path='/' />
+							<Route component={Homepage} exact path='/' />
 							<Route component={Contact} path='/contact-us' />
 							<Route component={Generate} path='/generate' />
 							<Route component={SignUp} path='/signup' />
