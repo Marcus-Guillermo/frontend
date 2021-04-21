@@ -199,18 +199,43 @@ const Generate_Resume = () => {
       setExperienceC(event.target.value)
   }
 
+  const [collegeName, setCollegeName] = useState("")
+  const onChangeCollegeName = (event) => {
+      event.preventDefault()
+      setCollegeName(event.target.value)
+  }
+  
+  const [degree, setDegree] = useState("")
+  const onChangeDegree = (event) => {
+      event.preventDefault()
+      setDegree(event.target.value)
+  }
+  const [gpaMajorGPA, setGPAMajorGPA] = useState("")
+  const onChangeGPAMajorGPA = (event) => {
+      event.preventDefault()
+      setDegree(event.target.value)
+  }
 
+  const [collegeDate, setCollegeDate] = useState("")
+  const onChangeCollegeDate = (event) => {
+      event.preventDefault()
+      setDegree(event.target.value)
+  }
 
-
+   //Modal Controls
+   const [show, setShow] = useState(false);
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
 
 
     return (
         <div className="generateBody">
 
         <h1 className="Banner">Let's Get Some Info:</h1>
-        <h3> Bullet Gallery: • ‣ </h3>
+        
             <div className="inputField">
                 <Form>
+                <h4 className="bullet grow"> Copy & paste as needed: •  »  </h4>
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Name</Form.Label>
@@ -240,7 +265,7 @@ const Generate_Resume = () => {
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Certifications </Form.Label>
-                    <Form.Control onChange={onChangeCertifications} value={certifications} placeholder="List certifications, etc"/>
+                    <Form.Control onChange={onChangeCertifications} value={certifications} placeholder="Certifications, etc"/>
                     </Form.Group>
                     </Form.Row>
 
@@ -255,12 +280,12 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Project Header (1) </Form.Label>
-                    <Form.Control onChange={onChangeProjectNameA} value={projectNameA} placeholder="What's the 'title' for your project?"/>
+                    <Form.Control onChange={onChangeProjectNameA} value={projectNameA} placeholder="Project Title"/>
                     </Form.Group>
                     {/* </Form.Row>
                     <Form.Row> */}
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
-                    <Form.Label> Describe the project</Form.Label>
+                    <Form.Label> Description</Form.Label>
                     <Form.Control onChange={onChangeProjectAEntry1} value={projectAEntry1} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
@@ -268,36 +293,36 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Project Header (2) </Form.Label>
-                    <Form.Control onChange={onChangeProjectNameB} value={projectNameB}  placeholder="What's the 'title' for your project?"/>
+                    <Form.Control onChange={onChangeProjectNameB} value={projectNameB}  placeholder="Project Title"/>
                     </Form.Group>
                     {/* </Form.Row>
                     <Form.Row> */}
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
-                    <Form.Label> Describe the project</Form.Label>
+                    <Form.Label> Description</Form.Label>
                     <Form.Control onChange={onChangeProjectBEntry1} value={projectBEntry1} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Project Header (3) </Form.Label>
-                    <Form.Control onChange={onChangeProjectNameC} value={projectNameC} placeholder="What's the 'title' for your project?"/>
+                    <Form.Control onChange={onChangeProjectNameC} value={projectNameC} placeholder="Project Title"/>
                     </Form.Group>
                     {/* </Form.Row>
                     <Form.Row> */}
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
-                    <Form.Label> Describe the project</Form.Label>
-                    <Form.Control onChange={onChangeProjectCEntry1} value={projectCEntry1} as="textarea" rows={4} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                    <Form.Label> Description</Form.Label>
+                    <Form.Control onChange={onChangeProjectCEntry1} value={projectCEntry1} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
                     {/* Professional Experience - Role A */}
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
-                    <Form.Control onChange={onChangeEmployerA} value={employerA} placeholder="i.e. Microsoft, etc." />
+                    <Form.Control onChange={onChangeEmployerA} value={employerA} placeholder="Microsoft, etc." />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Title </Form.Label>
-                    <Form.Control onChange={onChangeTitleA} value={titleA} placeholder="i.e. Software Engineer"/>
+                    <Form.Control onChange={onChangeTitleA} value={titleA} placeholder="Engineer"/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Date Range </Form.Label>
@@ -315,11 +340,11 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
-                    <Form.Control onChange={onChangeEmployerB} value={employerB} placeholder="i.e. Microsoft, etc." />
+                    <Form.Control onChange={onChangeEmployerB} value={employerB} placeholder="Microsoft, etc." />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Title </Form.Label>
-                    <Form.Control onChange={onChangeTitleB} value={titleB} placeholder="i.e. Software Engineer"/>
+                    <Form.Control onChange={onChangeTitleB} value={titleB} placeholder="Engineer"/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Date Range </Form.Label>
@@ -338,11 +363,11 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
-                    <Form.Control onChange={onChangeEmployerC} value={employerC} placeholder="i.e. Microsoft, etc." />
+                    <Form.Control onChange={onChangeEmployerC} value={employerC} placeholder="Microsoft, etc." />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Title </Form.Label>
-                    <Form.Control onChange={onChangeTitleC} value={titleC} placeholder="i.e. Software Engineer"/>
+                    <Form.Control onChange={onChangeTitleC} value={titleC} placeholder="Engineer"/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Date Range </Form.Label>
@@ -351,7 +376,7 @@ const Generate_Resume = () => {
                     </Form.Row>
                     <Form.Row>
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
-                    <Form.Label> Describe your Experience (1)</Form.Label>
+                    <Form.Label> Describe your Experience </Form.Label>
                     <Form.Control onChange={onChangeExperienceC} value={experienceC} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
@@ -360,21 +385,48 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>University Name</Form.Label>
-                    <Form.Control placeholder="Example State University" />
+                    <Form.Control onChange={onChangeCollegeName} value={collegeName} placeholder="Example State University" />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Degree & Major </Form.Label>
-                    <Form.Control placeholder="B.S. in Computer Engineering" />
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>GPA & Major GPA </Form.Label>
-                    <Form.Control placeholder="3.7/4.0 ; 3.9/4.0" />
+                    <Form.Control onChange={onChangeDegree} value={degree} placeholder="B.S. in Computer Science" />
                     </Form.Group>
                     </Form.Row>
+
+                    <Form.Row>
+                    <Form.Group as={Col} controlId="formGridName">
+                    <Form.Label>GPA & Major GPA </Form.Label>
+                    <Form.Control onChange={onChangeGPAMajorGPA} value={gpaMajorGPA} placeholder="3.7/4.0 ; 3.9/4.0" />
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formGridName">
+                    <Form.Label>Date Attended</Form.Label>
+                    <Form.Control onChange={onChangeCollegeDate} value={collegeDate} placeholder="08/2019 - Present" />
+                    </Form.Group>
+                    </Form.Row>
+
+                    <Button onClick={handleShow} variant="primary">
+                        All done!
+                    </Button>
                 </Form>
+                <Modal show={show} onHide={handleClose}>
+              <Modal.Header >
+                <Modal.Title>That resume looks great!</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                To save your resume as a PDF, simply click the download icon on the rendered toolbar above the document. It will download to your browser. <br></br>Good luck with your applications!
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Close
+                </Button> 
+            </Modal.Footer>
+        </Modal>
+
+                
+
             </div>
 
-
+            <h1 className="generateBanner">Here's your Resume:</h1>
             <div className="generateRender">
             <PDFViewer className="viewer">
         <Document>
@@ -401,7 +453,7 @@ const Generate_Resume = () => {
             <Text style={styles.entry}>{projectCEntry1}</Text>
             
             {/* Professional Experience */}
-            <Text style={styles.Banner}>Professional Experience</Text>
+            <Text style={styles.Banner}>PPROFESSIONAL EXPERIENCE</Text>
             {/* Role A */}
             <Text style={styles.entryHeader}>{employerA}</Text>
             <Text style={styles.date}>{dateA}</Text> 
@@ -423,11 +475,11 @@ const Generate_Resume = () => {
             <Text style={styles.entry}>{experienceC}</Text>
             
             {/* Education */}
-            <Text style={styles.Banner}>Education</Text>
-            <Text style={styles.entryHeader}>Example School / University</Text>
-            <Text style={styles.date}>DATE</Text> 
-            <Text style={styles.entry}>Bachelor of Arts in Computer Science</Text>
-            <Text style={styles.entry}>GPA: 3.7/4.0; Major GPA: 3.9/4.0</Text>
+            <Text style={styles.Banner}>EDUCATION</Text>
+            <Text style={styles.entryHeader}>{collegeName}</Text>
+            <Text style={styles.date}>{collegeDate}</Text> 
+            <Text style={styles.entry}>{degree}</Text>
+            <Text style={styles.entry}>{gpaMajorGPA}</Text>
 
         </Page>
     </Document>

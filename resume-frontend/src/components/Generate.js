@@ -213,7 +213,7 @@ const Generate = () => {
         </Form>
       
         <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
+              <Modal.Header>
                 <Modal.Title>That cover letter looks great!</Modal.Title>
               </Modal.Header>
               <Modal.Body>
