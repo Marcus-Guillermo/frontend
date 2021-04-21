@@ -61,7 +61,7 @@ const Generate = () => {
             setDate(event.target.value)}
 
     //Email
-   const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("")
     const onChangeEmail = (event) => {
             event.preventDefault()
             setEmail(event.target.value)}
@@ -213,7 +213,7 @@ const Generate = () => {
         </Form>
       
         <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
+              <Modal.Header>
                 <Modal.Title>That cover letter looks great!</Modal.Title>
               </Modal.Header>
               <Modal.Body>

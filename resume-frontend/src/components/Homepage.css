@@ -18,18 +18,19 @@
     grid-row-start: 4;
     width: 100%;
 }
+.genLeadTwoButton {
+    margin-left: 10px;
+    grid-column-start: 2;
+    grid-row-start: 5;
+    width: 100%;
+  
+}
 
 .loginButton {
     margin-top: 10px;
     grid-column-start: 2;
     grid-row-start: 5;
     /* width: 100%; */
-}
-.genLeadTwoButton {
-    margin-top: 10px;
-    grid-column-start: 2;
-    grid-row-start: 6;
-    width: 100%;
 }
 
 .welcomeMessage {
