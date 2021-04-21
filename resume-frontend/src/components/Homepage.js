@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 // Firebase Credentials
 import app from '../firebase';
 
-
 const Homepage = () => {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
@@ -16,7 +15,7 @@ const Homepage = () => {
 	const [error, setError] = useState('');
 
 	const signInWithEmailAndPasswordHandler = (event, email, password) => {
-    console.log(event)
+		console.log(event);
 		event.preventDefault();
 		app
 			.auth()
@@ -27,7 +26,7 @@ const Homepage = () => {
 			});
 	};
 
-	const handleChange= (event) => {
+	const handleChange = (event) => {
 		const { name, value } = event.currentTarget;
 		console.log(event.currentTarget);
 
@@ -38,11 +37,11 @@ const Homepage = () => {
 		}
 	};
 
-  const handleSubmit = (event) => {
-    // event.preventDefault()
-    handleClose()
-    alert('you successfully logged in')
-  }
+	const handleSubmit = (event) => {
+		// event.preventDefault()
+		handleClose();
+		alert('you successfully logged in');
+	};
 
 	return (
 		<div className='welcomeContainer'>
@@ -53,13 +52,13 @@ const Homepage = () => {
 				handle the rest!
 			</h4>
 
-			<Link className= "genLeadTwoButton" to="/generate">
-                <Button >Let's make a Cover Letter</Button>
-      </Link>
+			<Link className='genLeadTwoButton' to='/generate'>
+				<Button>Let's make a Cover Letter</Button>
+			</Link>
 
-      <Link className= "genLeadButton" to="/generate-resume">
-                <Button >Let's make a Resume</Button>
-      </Link>
+			<Link className='genLeadButton' to='/generate-resume'>
+				<Button>Let's make a Resume</Button>
+			</Link>
 
 			<Button onClick={handleShow} className='loginButton'>
 				Log In to Resu.me
@@ -89,7 +88,7 @@ const Homepage = () => {
 						</Form.Group>
 
 						<br></br>
-            
+
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
@@ -104,7 +103,8 @@ const Homepage = () => {
 							variant='secondary'
 							type='submit'
 							onClick={(event) => {
-								signInWithEmailAndPasswordHandler(event, email, password);handleSubmit()
+								signInWithEmailAndPasswordHandler(event, email, password);
+								handleSubmit();
 							}}>
 							Login
 						</Button>
@@ -112,7 +112,7 @@ const Homepage = () => {
 				</Modal.Body>
 			</Modal>
 		</div>
-	);    
+	);
 };
 
 export default Homepage;
