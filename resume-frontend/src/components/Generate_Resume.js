@@ -3,7 +3,7 @@ import { Form, Jumbotron, Button, Modal, Col, Row } from "react-bootstrap";
 import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 import ReactPDF from '@react-pdf/renderer';
 import "./Generate_Resume.css";
-
+import List from './List'
 
 
 const Generate_Resume = () => {
@@ -57,8 +57,16 @@ const Generate_Resume = () => {
         
     });
 
+    // const onChangeTest = (event, code)=> {
+    //     const name = event.target.value;
+    //     const toChange = {[code]: name};
+    //    setName(toChange)
+    //  }
     //Let's establish our state environemnt
     //Name
+
+
+
    const [name, setName] = useState("");
    const onChangeName = (event)=> {
        event.preventDefault()
@@ -213,13 +221,13 @@ const Generate_Resume = () => {
   const [gpaMajorGPA, setGPAMajorGPA] = useState("")
   const onChangeGPAMajorGPA = (event) => {
       event.preventDefault()
-      setDegree(event.target.value)
+      setGPAMajorGPA(event.target.value)
   }
 
   const [collegeDate, setCollegeDate] = useState("")
   const onChangeCollegeDate = (event) => {
       event.preventDefault()
-      setDegree(event.target.value)
+      setCollegeDate(event.target.value)
   }
 
    //Modal Controls
@@ -245,35 +253,38 @@ const Generate_Resume = () => {
                     <Form.Label>Your Email </Form.Label>
                     <Form.Control onChange={onChangeEmail} value={email} placeholder="example@gmail.com" />
                     </Form.Group>
-                    </Form.Row>
-
-                    <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Cell Number</Form.Label>
                     <Form.Control onChange={onChangeCellNumber} value={cellnumber} placeholder="i.e 505-867-5309" />
                     </Form.Group>
+                    </Form.Row>
+
+                    <Form.Row>
+                    
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Mailing Address </Form.Label>
                     <Form.Control onChange={onChangeAddress} value={address} placeholder="i.e. 42 Wallaby Way, Sydney" />
                     </Form.Group>
-                    </Form.Row>
-
-                    <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>LinkedIn </Form.Label>
                     <Form.Control onChange={onChangeLinkedIn} value={linkedIn} placeholder="i.e. https://www.linkedin.com/in/exampleperson/" />
                     </Form.Group>
+                    </Form.Row>
+
+                   
+                    <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Certifications </Form.Label>
                     <Form.Control onChange={onChangeCertifications} value={certifications} placeholder="Certifications, etc"/>
                     </Form.Group>
-                    </Form.Row>
-
-                    <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Technical Skills </Form.Label>
                     <Form.Control onChange={onChangeTechnicalSkills} value={technicalSkills} placeholder="i.e. React, React Native,TypeScript, Python..."/>
                     </Form.Group>
+                    </Form.Row>
+
+                    <Form.Row>
+                    
                     </Form.Row>
                    
                     {/* First Project */}
@@ -395,7 +406,7 @@ const Generate_Resume = () => {
 
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>GPA & Major GPA </Form.Label>
+                    <Form.Label>GPA and Major GPA </Form.Label>
                     <Form.Control onChange={onChangeGPAMajorGPA} value={gpaMajorGPA} placeholder="3.7/4.0 ; 3.9/4.0" />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
@@ -486,6 +497,7 @@ const Generate_Resume = () => {
     </PDFViewer>
 
         </div>
+       
         </div>
     );
 };
