@@ -1,48 +1,35 @@
-import React, { useState, useCallback, useContext } from 'react';
+import React, { useState } from 'react';
 import './Homepage.css';
 import { Button, Modal, Form } from 'react-bootstrap';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // Firebase Credentials
-import app from '../firebase'
-import { AuthContext } from '../Auth'
+import app from '../firebase';
+
 
 const Homepage = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+	const [show, setShow] = useState(false);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 
-  // const handleLogin = useCallback(
-  //   async (event)=> {
-  //     event.preventDefault();
-  //     const { email, password } = event.target.elements;
-  //     try {
-  //       await app.auth().signInWithEmailAndPassword(email.value, password.value);
-  //       history.push('/generate')
-  //     }catch(error){
-  //       alert(error);
-  //     }
-  //   },[history]
-  //   );
-    
-  //   const { currentUser } = useContext(AuthContext);
-    
-  //   if (currentUser) {
-  //     return 
-  //   }
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, setError] = useState('');
 
-  const signInWithEmailAndPasswordHandler = (event, email, password) => {
+	const signInWithEmailAndPasswordHandler = (event, email, password) => {
+    console.log(event)
 		event.preventDefault();
-		app.auth().signInWithEmailAndPassword(email, password).catch((error) => {
-			setError('Error signing in with password and email!');
-			console.error('Error signing in with password and email', error);
-		});
+		app
+			.auth()
+			.signInWithEmailAndPassword(email, password)
+			.catch((error) => {
+				setError('Error signing in with password and email!');
+				console.error('Error signing in with password and email', error);
+			});
 	};
 
-	const onChangeHandler = (event) => {
+	const handleChange= (event) => {
 		const { name, value } = event.currentTarget;
+		console.log(event.currentTarget);
 
 		if (name === 'userEmail') {
 			setEmail(value);
@@ -50,7 +37,13 @@ const Homepage = () => {
 			setPassword(value);
 		}
 	};
-     
+
+  const handleSubmit = (event) => {
+    // event.preventDefault()
+    handleClose()
+    alert('you successfully logged in')
+  }
+
 	return (
 		<div className='welcomeContainer'>
 			<h1 className='welcomeBanner'>Resu.Me</h1>
@@ -66,11 +59,10 @@ const Homepage = () => {
 			<Button onClick={handleShow} className='loginButton'>
 				Log In to Resu.me
 			</Button>
-			{/* <h2 className="servicesBanner">Score the job you deserve with the help of our tools</h2> */}
 
-			<h2 className='servicesContainer serviceA'>PLACEHOLDER A</h2>
+			{/* <h2 className='servicesContainer serviceA'>PLACEHOLDER A</h2>
 			<h2 className='servicesContainer serviceB'>PLACEHOLDER B</h2>
-			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2>
+			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2> */}
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
@@ -78,20 +70,16 @@ const Homepage = () => {
 				</Modal.Header>
 
 				<Modal.Body>
-					{error !== null && (
-						<div className='py-4 bg-red-600 w-full text-white text-center mb-3'>
-							{error}
-						</div>
-					)}
-					<Form>
+					{error !== null && <div>{error}</div>}
+					<Form onSubmit={handleSubmit}>
 						<Form.Group controlId='formBasicEmail'>
 							<Form.Label className='label'>Email Address</Form.Label>
 							<Form.Control
-								name='email'
-                value={email}
+								name='userEmail'
+								value={email}
 								type='email'
 								placeholder='Login email'
-                onChange ={(event)=> onChangeHandler(event)}
+								onChange={(event) => handleChange(event)}
 							/>
 						</Form.Group>
 
@@ -100,20 +88,23 @@ const Homepage = () => {
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
-								name='password'
-                value ={password}
+								name='userPassword'
+								value={password}
 								type='password'
 								placeholder='Password'
-                onChange = {(event) => onChangeHandler(event)}
+								onChange={(event) => handleChange(event)}
 							/>
 						</Form.Group>
+						<Button
+							variant='secondary'
+							type='submit'
+							onClick={(event) => {
+								signInWithEmailAndPasswordHandler(event, email, password);handleSubmit()
+							}}>
+							Login
+						</Button>
 					</Form>
 				</Modal.Body>
-				<Modal.Footer>
-					<Button variant='secondary' type='submit' onClick={(event)=>{signInWithEmailAndPasswordHandler(event, email, password)}}>
-						Login
-					</Button>
-				</Modal.Footer>
 			</Modal>
 		</div>
 	);

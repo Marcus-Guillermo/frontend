@@ -1,7 +1,6 @@
 // This component will store our auth status
 import React, { useContext, useEffect, useState } from 'react';
 import app from './firebase';
-// import { auth } from './firebase'
 
 // tool used to propogate data
 export const AuthContext = React.createContext();
