@@ -52,9 +52,14 @@ const Homepage = () => {
 				<br></br> Simply input your credentials and contact information - We
 				handle the rest!
 			</h4>
-			<Link className='genLeadButton' to='/generate'>
-				<Button>Let's make a Resume</Button>
-			</Link>
+
+			<Link className= "genLeadTwoButton" to="/generate">
+                <Button >Let's make a Cover Letter</Button>
+      </Link>
+
+      <Link className= "genLeadButton" to="/generate-resume">
+                <Button >Let's make a Resume</Button>
+      </Link>
 
 			<Button onClick={handleShow} className='loginButton'>
 				Log In to Resu.me
@@ -84,7 +89,7 @@ const Homepage = () => {
 						</Form.Group>
 
 						<br></br>
-
+            
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
@@ -107,7 +112,7 @@ const Homepage = () => {
 				</Modal.Body>
 			</Modal>
 		</div>
-	);
+	);    
 };
 
 export default Homepage;
