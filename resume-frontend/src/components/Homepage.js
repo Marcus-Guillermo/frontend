@@ -89,6 +89,7 @@ const Homepage = () => {
 
 						<br></br>
 
+
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
@@ -113,6 +114,7 @@ const Homepage = () => {
 			</Modal>
 		</div>
 	);
+
 };
 
 export default Homepage;
