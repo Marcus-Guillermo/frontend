@@ -239,11 +239,13 @@ const Generate_Resume = () => {
     return (
         <div className="generateBody">
 
-        <h1 className="Banner">Let's Get UPDATE TEST Some Info:</h1>
+        <h1 className="Banner">Let's Get Some Info:</h1>
         
             <div className="inputField">
                 <Form>
                 <h4 className="bullet grow"> Copy & paste as needed: •  »  </h4>
+                <h2 className="formSubHeader"> Personal Details</h2>
+
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Name</Form.Label>
@@ -254,78 +256,65 @@ const Generate_Resume = () => {
                     <Form.Control onChange={onChangeEmail} value={email} placeholder="example@gmail.com" />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>Your Cell Number</Form.Label>
+                    <Form.Label>Cell Number</Form.Label>
                     <Form.Control onChange={onChangeCellNumber} value={cellnumber} placeholder="i.e 505-867-5309" />
                     </Form.Group>
                     </Form.Row>
 
-                    <Form.Row>
-                    
-                    <Form.Group as={Col} controlId="formGridName">
+                    <Form.Group controlId="formGridName">
                     <Form.Label>Mailing Address </Form.Label>
                     <Form.Control onChange={onChangeAddress} value={address} placeholder="i.e. 42 Wallaby Way, Sydney" />
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formGridName">
+                    <h2 className="formSubHeader"> Skills and Certifications</h2>
+                    <Form.Group controlId="formGridName">
                     <Form.Label>LinkedIn </Form.Label>
                     <Form.Control onChange={onChangeLinkedIn} value={linkedIn} placeholder="i.e. https://www.linkedin.com/in/exampleperson/" />
                     </Form.Group>
-                    </Form.Row>
-
-                   
-                    <Form.Row>
-                    <Form.Group as={Col} controlId="formGridName">
+                    <Form.Group controlId="formGridName">
                     <Form.Label>Certifications </Form.Label>
-                    <Form.Control onChange={onChangeCertifications} value={certifications} placeholder="Certifications, etc"/>
+                    <Form.Control onChange={onChangeCertifications} value={certifications} placeholder="Certifications such as Coursera, EdX, etc"/>
                     </Form.Group>
-                    <Form.Group as={Col} controlId="formGridName">
+                    <Form.Group controlId="formGridName">
                     <Form.Label>Technical Skills </Form.Label>
-                    <Form.Control onChange={onChangeTechnicalSkills} value={technicalSkills} placeholder="i.e. React, React Native,TypeScript, Python..."/>
+                    <Form.Control onChange={onChangeTechnicalSkills} value={technicalSkills} placeholder="i.e. React, React Native, Figma, TypeScript, C++, Python..."/>
                     </Form.Group>
-                    </Form.Row>
-
-                    <Form.Row>
-                    
-                    </Form.Row>
                    
-                    {/* First Project */}
-                    <Form.Row>
-                    <Form.Group as={Col} controlId="formGridName">
+                    <h2 className="formSubHeader"> Project Portfolio</h2>
+                    <Form.Group controlId="formGridName">
                     <Form.Label>Project Header (1) </Form.Label>
                     <Form.Control onChange={onChangeProjectNameA} value={projectNameA} placeholder="Project Title"/>
                     </Form.Group>
                     {/* </Form.Row>
                     <Form.Row> */}
-                    <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
-                    <Form.Label> Description</Form.Label>
-                    <Form.Control onChange={onChangeProjectAEntry1} value={projectAEntry1} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Label> Project Description (1)</Form.Label>
+                    <Form.Control onChange={onChangeProjectAEntry1} value={projectAEntry1} as="textarea" rows={3} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
-                    </Form.Row>
+                   
                     {/* Second Project */}
-                    <Form.Row>
-                    <Form.Group as={Col} controlId="formGridName">
+                    
+                    <Form.Group controlId="formGridName">
                     <Form.Label>Project Header (2) </Form.Label>
                     <Form.Control onChange={onChangeProjectNameB} value={projectNameB}  placeholder="Project Title"/>
                     </Form.Group>
-                    {/* </Form.Row>
-                    <Form.Row> */}
-                    <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
-                    <Form.Label> Description</Form.Label>
-                    <Form.Control onChange={onChangeProjectBEntry1} value={projectBEntry1} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                   
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Label> Project Description (2)</Form.Label>
+                    <Form.Control onChange={onChangeProjectBEntry1} value={projectBEntry1} as="textarea" rows={3} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
-                    </Form.Row>
-                    <Form.Row>
-                    <Form.Group as={Col} controlId="formGridName">
+                   
+                   
+                    <Form.Group controlId="formGridName">
                     <Form.Label>Project Header (3) </Form.Label>
                     <Form.Control onChange={onChangeProjectNameC} value={projectNameC} placeholder="Project Title"/>
                     </Form.Group>
-                    {/* </Form.Row>
-                    <Form.Row> */}
-                    <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
-                    <Form.Label> Description</Form.Label>
-                    <Form.Control onChange={onChangeProjectCEntry1} value={projectCEntry1} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                    
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                    <Form.Label>Project Description (3)</Form.Label>
+                    <Form.Control onChange={onChangeProjectCEntry1} value={projectCEntry1} as="textarea" rows={3} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
-                    </Form.Row>
-                    {/* Professional Experience - Role A */}
+                   
+                    <h2 className="formSubHeader"> Professional Experience - Role A</h2>
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
@@ -343,11 +332,11 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
                     <Form.Label> Describe your Experience</Form.Label>
-                    <Form.Control onChange={onChangeExperienceA} value={experienceA} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                    <Form.Control onChange={onChangeExperienceA} value={experienceA} as="textarea" rows={6} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
                   
-                    {/* Professional Experience - Role B */}
+                    <h2 className="formSubHeader"> Professional Experience - Role B</h2>
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
@@ -365,12 +354,12 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
                     <Form.Label> Describe your Experience </Form.Label>
-                    <Form.Control onChange={onChangeTitleB} value={experienceB} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                    <Form.Control onChange={onChangeTitleB} value={experienceB} as="textarea" rows={6} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
                   
 
-                    {/* Professional Experience - Role C */}
+                    <h2 className="formSubHeader"> Professional Experience - Role C</h2>
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
@@ -388,11 +377,11 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
                     <Form.Label> Describe your Experience </Form.Label>
-                    <Form.Control onChange={onChangeExperienceC} value={experienceC} as="textarea" rows={2} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                    <Form.Control onChange={onChangeExperienceC} value={experienceC} as="textarea" rows={6} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
                    
-                    {/* Education */}
+                    <h2 className="formSubHeader"> Educational Experience</h2>
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>University Name</Form.Label>
@@ -419,7 +408,7 @@ const Generate_Resume = () => {
                         All done!
                     </Button>
                 </Form>
-                <Modal show={show} onHide={handleClose}>
+                <Modal scrollable={true} show={show} onHide={handleClose}>
               <Modal.Header >
                 <Modal.Title>That resume looks great!</Modal.Title>
               </Modal.Header>
@@ -432,8 +421,6 @@ const Generate_Resume = () => {
                 </Button> 
             </Modal.Footer>
         </Modal>
-
-                
 
             </div>
 
