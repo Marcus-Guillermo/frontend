@@ -239,7 +239,7 @@ const Generate_Resume = () => {
     return (
         <div className="generateBody">
 
-        <h1 className="Banner">Let's Get Some Info:</h1>
+        <h1 className="Banner">Let's Get UPDATE TEST Some Info:</h1>
         
             <div className="inputField">
                 <Form>
