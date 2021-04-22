@@ -14,6 +14,13 @@ const Homepage = () => {
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
 
+
+	// const [token, setToken] = useState('');
+	// function logout() {
+	// 	app.auth().removeItem('token');
+	// 	setToken('');
+	// }
+
 	const signInWithEmailAndPasswordHandler = (event, email, password) => {
 		console.log(event);
 		event.preventDefault();
@@ -38,9 +45,9 @@ const Homepage = () => {
 	};
 
 	const handleSubmit = (event) => {
-		// event.preventDefault()
 		handleClose();
-		alert('you successfully logged in');
+		// signInWithEmailAndPasswordHandler();
+		alert('you\'ve successfully logged in');
 	};
 
 	return (
@@ -52,11 +59,18 @@ const Homepage = () => {
 				handle the rest!
 			</h4>
 
-			<Link className='genLeadTwoButton' to='/generate'>
+		{/* {!token ? ( */}
+			<Button onClick={handleShow} className='loginButton'>
+				Log In to Resu.me
+			</Button>
+
+		{/* ) : ( */}
+
+			<Link className='genLeadButton' to='/generate'>
 				<Button>Let's make a Cover Letter</Button>
 			</Link>
 
-			<Link className='genLeadButton' to='/generate-resume'>
+			<Link className='genLeadTwoButton' to='/generate-resume'>
 				<Button>Let's make a Resume</Button>
 			</Link>
 

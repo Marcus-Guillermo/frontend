@@ -9,7 +9,8 @@ import Generate_Resume from './components/Generate_Resume';
 // Firebase authentication
 import SignUp from './components/SignUp';
 import { AuthProvider } from './Auth';
-// import PrivateRoute from './PrivateRoute'
+import PrivateRoute from './PrivateRoute';
+import Logout from './auth/Logout'
 
 function App() {
 	return (
@@ -20,15 +21,17 @@ function App() {
 					<Navbar></Navbar>
 				</header>
 				<Link to='/'>Home</Link>
+				<Logout />
 
 				<AuthProvider>
 					<main>
 						<Switch>
 							<Route component={Homepage} exact path='/' />
 							<Route component={Contact} path='/contact-us' />
-							<Route component={Generate} path='/generate' />
-							<Route component={Generate_Resume} path='/generate-resume' />
 							<Route component={SignUp} path='/signup' />
+
+							<PrivateRoute component={Generate_Resume} path='/generate-resume' />
+							<PrivateRoute component={Generate} path='/generate' />
 						</Switch>
 					</main>
 				</AuthProvider>
