@@ -1,11 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
+import { withRouter } from 'react-router'
+import app from '../firebase'
 import "./Accounts.css";
 import { Form, Jumbotron, Button, Modal } from "react-bootstrap";
 
-const Accounts = () => {
+const SignUp = ({ history }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleSignUp = useCallback (
+    async(event) => {
+      event.preventDefault();
+      const { email, password } = event.target.elements;
+      try {
+        await app.auth().createUserWithEmailAndPassword(email.value, password.value);
+        history.push('/');
+      } catch(error){
+        alert(error.message)
+      }
+    }, [history]
+  )
 
   return (
     <div>
@@ -41,11 +56,14 @@ const Accounts = () => {
           </Jumbotron>
         </div>
 
+{/* This is the account sign up form */}
+
         <div className="formBody">
-          <Form>
+          <Form onSubmit={handleSignUp}>
             <Form.Group controlId="formBasicEmail">
               <Form.Label className="label">Email Address</Form.Label>
               <Form.Control
+                name='email'
                 type="email"
                 placeholder="Enter your email - we'll never share your email with third parties"
               />
@@ -56,11 +74,11 @@ const Accounts = () => {
             <br></br>
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control name ='password' type="password" placeholder="Password" />
             </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
+            {/* <Form.Group controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
+            </Form.Group> */}
             <Button variant="primary" type="submit">
               Submit
             </Button>
@@ -71,4 +89,4 @@ const Accounts = () => {
   );
 };
 
-export default Accounts;
+export default withRouter(SignUp)
