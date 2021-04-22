@@ -17,3 +17,7 @@ label.form-label {
     float: left;
     font-size: 16px;
 }
+
+.jumbotron {
+    grid-column-start: 4;
+}

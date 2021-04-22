@@ -7,14 +7,14 @@ const navbar = () => {
     return (
     <div className="navbar">
         <Link to="/signup">
-            <Button className = "loginButton">Create an Account</Button>
+            <Button className = "custom">Create an Account</Button>
         </Link>
 
         
       
         <Button>Features</Button>
         <Link to="/contact-us">
-            <Button className = "contactButton">Contact Us</Button>
+            <Button style={{background:"#F4ECD6"}} className = "contactButton">Contact Us</Button>
         </Link>
         
 

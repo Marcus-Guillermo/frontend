@@ -24,10 +24,10 @@ const SignUp = ({ history }) => {
 
   return (
     <div >
-      {/* <h1 className="accountsBanner">Get Started with Resu.Me</h1> */}
+      <h1 className="accountsBanner">Get Started with Resu.Me</h1>
       <div className="accountsBody">
         <div>
-          <Jumbotron>
+          <Jumbotron className="jumbotron">
             <h1>Resumes have Never Been Easier</h1>
             <p>
               Join us and start making professional resumes at the push of a
