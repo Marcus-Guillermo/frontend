@@ -1,4 +1,14 @@
 
+.accountsBody {
+    display: grid;
+    grid-template-columns: .25fr 1fr .25fr 1fr .25fr;
+    grid-template-rows: .25fr 1fr .25fr 1fr .25fr;
+}
+
+.jumbotron {
+    grid-column-start: 2;
+    }
+
 label.form-label {
     font-size: 32px;
 }
@@ -6,4 +16,8 @@ label.form-label {
 .text-muted {
     float: left;
     font-size: 16px;
+}
+
+.jumbotron {
+    grid-column-start: 4;
 }

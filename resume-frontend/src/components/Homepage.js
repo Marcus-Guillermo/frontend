@@ -64,9 +64,9 @@ const Homepage = () => {
 				Log In to Resu.me
 			</Button>
 
-			{/* <h2 className='servicesContainer serviceA'>PLACEHOLDER A</h2>
+			<h2 className='servicesContainer serviceA'>PLACEHOLDER A</h2>
 			<h2 className='servicesContainer serviceB'>PLACEHOLDER B</h2>
-			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2> */}
+			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2>
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>

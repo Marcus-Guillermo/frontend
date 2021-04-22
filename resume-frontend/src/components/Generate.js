@@ -168,7 +168,7 @@ const Generate = () => {
             </Form.Group>
 
             <Form.Group as={Col}  controlId="formGridPhone">
-              <Form.Label> Preferred Phone Number</Form.Label>
+              <Form.Label> Phone Number</Form.Label>
               <Form.Control onChange={onChangePhone} value={phone} type="phone" placeholder="i.e. 1-212-867-5309" />
             </Form.Group>
           </Form.Row>
@@ -182,18 +182,18 @@ const Generate = () => {
             <Form.Control onChange={onChangeSalute} value={salutation} placeholder="i.e. Dear Hiring Manager, To whom it may concern, etc" />
           </Form.Group>
 
-          <Form.Row>
+      
           <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Let's write your cover letter's intro paragraph</Form.Label>
                 <Form.Control as="textarea" rows={4} onChange={onChangeIntro} value={introParagraph} placeholder="i.e. It is with great interest..." />
         </Form.Group>
-          </Form.Row>
-          <Form.Row>
+        
+         
           <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label>Let's write your cover letter's body paragraph</Form.Label>
                 <Form.Control as="textarea" rows={4} onChange={onChangeBody} value={bodyParagraph} placeholder="i.e. I am currently a software engineer..." />
         </Form.Group>
-          </Form.Row>
+          
 
           <Form.Group controlId="formGridAddress1">
             <Form.Label>Let's write a call-to-action</Form.Label>
