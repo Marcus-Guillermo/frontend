@@ -235,6 +235,8 @@ const Generate_Resume = () => {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
 
+//   const [bulletShow, setBulletShow] = useState(false);
+//   const handleBullet = () => setBulletShow(true)
 
     return (
         <div className="generateBody">
@@ -243,6 +245,7 @@ const Generate_Resume = () => {
         
             <div className="inputField">
                 <Form>
+                    {/* <Button>Show Bullets</Button> */}
                 <h4 className="bullet grow"> Copy & paste as needed: •  »  </h4>
                 <h2 className="formSubHeader"> Personal Details</h2>
 

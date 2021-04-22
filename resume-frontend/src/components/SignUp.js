@@ -23,10 +23,10 @@ const SignUp = ({ history }) => {
   )
 
   return (
-    <div>
-      <h1 className="accountsBanner">Get Started with Resu.Me</h1>
+    <div >
+      {/* <h1 className="accountsBanner">Get Started with Resu.Me</h1> */}
       <div className="accountsBody">
-        <div className="informationalPanel">
+        <div>
           <Jumbotron>
             <h1>Resumes have Never Been Easier</h1>
             <p>
