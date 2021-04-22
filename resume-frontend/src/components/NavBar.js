@@ -1,14 +1,12 @@
 import React from 'react';
-import { Navbar, Button} from 'react-bootstrap';
-import { Route, Switch, Link } from "react-router-dom";
+import { Button} from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import './NavBar.css'
-import Homepage from './Homepage';
-
 
 const navbar = () => {
     return (
     <div className="navbar">
-        <Link to="/accounts">
+        <Link to="/signup">
             <Button className = "loginButton">Create an Account</Button>
         </Link>
 
