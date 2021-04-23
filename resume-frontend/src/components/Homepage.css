@@ -71,5 +71,10 @@
     /* color: #F4ECD6; */
 
 }
+
+.container{
+    grid-row-start: 7
+}
+
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
