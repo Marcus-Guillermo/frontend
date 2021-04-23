@@ -6,6 +6,11 @@
 
 }
 
+.frametest {
+    grid-template-columns: 3;
+    width: 100%;
+}
+
 .welcomeBanner {
     font-size: 15vh;
     grid-column-start: 2;

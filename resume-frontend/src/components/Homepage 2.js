@@ -4,10 +4,6 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // Firebase Credentials
 import app from '../firebase';
-import background from './img/city.jpg'
-
-import Levels from '../Placeholder/Levels'
-
 
 const Homepage = () => {
 	const [show, setShow] = useState(false);
@@ -17,13 +13,6 @@ const Homepage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
-
-
-	// const [token, setToken] = useState('');
-	// function logout() {
-	// 	app.auth().removeItem('token');
-	// 	setToken('');
-	// }
 
 	const signInWithEmailAndPasswordHandler = (event, email, password) => {
 		console.log(event);
@@ -49,15 +38,13 @@ const Homepage = () => {
 	};
 
 	const handleSubmit = (event) => {
+		// event.preventDefault()
 		handleClose();
-		// signInWithEmailAndPasswordHandler();
-		alert('you\'ve successfully logged in');
+		alert('you successfully logged in');
 	};
 
 	return (
-		<div
-			className='welcomeContainer'
-			style={{ backgroundImage: `url(${background})` }}>
+		<div className='welcomeContainer'>
 			<h1 className='welcomeBanner'>Resu.Me</h1>
 			<h4 className='welcomeMessage'>
 				Resu.me is the easiest solution for cover letters and resumes.
@@ -65,49 +52,21 @@ const Homepage = () => {
 				handle the rest!
 			</h4>
 
-			{/* {!token ? ( */}
-			<Button
-				style={{ background: '#A7A0A0', fontWeight: 'bold' }}
-				onClick={handleShow}
-				className='loginButton'>
+			<Link className='genLeadTwoButton' to='/generate'>
+				<Button>Let's make a Cover Letter</Button>
+			</Link>
+
+			<Link className='genLeadButton' to='/generate-resume'>
+				<Button>Let's make a Resume</Button>
+			</Link>
+
+			<Button onClick={handleShow} className='loginButton'>
 				Log In to Resu.me
 			</Button>
 
-			{/* ) : ( */}
-
-			<Link className='genLeadButton' to='/generate'>
-				<Button style={{ background: '#A7A0A0', fontWeight: 'bold' }}>
-					Let's make a Cover Letter
-				</Button>
-			</Link>
-
-			<Link className='genLeadTwoButton' to='/generate-resume'>
-				<Button style={{ background: '#A7A0A0', fontWeight: 'bold' }}>
-					Let's make a Resume
-				</Button>
-			</Link>
-
-			<Link className='genLeadThreeButton' to='/salary'>
-				<Button style={{ background: '#A7A0A0', fontWeight: 'bold' }}>
-					See Salary Data via Levels.fyi
-				</Button>
-			</Link>
-
-			<Button
-				style={{ background: '#A7A0A0', fontWeight: 'bold' }}
-				onClick={handleShow}
-				className='loginButton'>
-				Log In to Resu.me
-			</Button>
-
-{/* <div classname='framertwo'>
-			<h2 className='servicesContainer serviceA'></h2>
-			<Levels />
-</div> */}
+			{/* <h2 className='servicesContainer serviceA'>PLACEHOLDER A</h2>
 			<h2 className='servicesContainer serviceB'>PLACEHOLDER B</h2>
-			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2>
-			
-
+			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2> */}
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
@@ -130,6 +89,7 @@ const Homepage = () => {
 
 						<br></br>
 
+
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
@@ -141,7 +101,6 @@ const Homepage = () => {
 							/>
 						</Form.Group>
 						<Button
-							style={{ background: '#A7A0A0', fontWeight: 'bold' }}
 							variant='secondary'
 							type='submit'
 							onClick={(event) => {

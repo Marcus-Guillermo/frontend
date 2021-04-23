@@ -1,0 +1,14 @@
+.levelsContainer {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 1;
+}
+
+.frametest {
+    grid-column-start: 1;
+}
+
+.comparison {
+    grid-column-start: 2;
+
+}
