@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 import app from '../firebase';
 import background from './img/city.jpg'
 
+import Levels from '../Placeholder/Levels'
+
+
 const Homepage = () => {
 	const [show, setShow] = useState(false);
 	const handleClose = () => setShow(false);
@@ -52,7 +55,9 @@ const Homepage = () => {
 	};
 
 	return (
-		<div className='welcomeContainer' style={{ backgroundImage: `url(${background})` }}>
+		<div
+			className='welcomeContainer'
+			style={{ backgroundImage: `url(${background})` }}>
 			<h1 className='welcomeBanner'>Resu.Me</h1>
 			<h4 className='welcomeMessage'>
 				Resu.me is the easiest solution for cover letters and resumes.
@@ -60,29 +65,42 @@ const Homepage = () => {
 				handle the rest!
 			</h4>
 
-		{/* {!token ? ( */}
-			<Button style={{background:"#A7A0A0",fontWeight: "bold"}} onClick={handleShow} className='loginButton'>
+			{/* {!token ? ( */}
+			<Button
+				style={{ background: '#A7A0A0', fontWeight: 'bold' }}
+				onClick={handleShow}
+				className='loginButton'>
 				Log In to Resu.me
 			</Button>
 
-		{/* ) : ( */}
+			{/* ) : ( */}
 
 			<Link className='genLeadButton' to='/generate'>
-				<Button style={{background:"#A7A0A0",fontWeight: "bold"}}>Let's make a Cover Letter</Button>
+				<Button style={{ background: '#A7A0A0', fontWeight: 'bold' }}>
+					Let's make a Cover Letter
+				</Button>
 			</Link>
 
 			<Link className='genLeadTwoButton' to='/generate-resume'>
-				<Button style={{background:"#A7A0A0",fontWeight: "bold"}}>Let's make a Resume</Button>
+				<Button style={{ background: '#A7A0A0', fontWeight: 'bold' }}>
+					Let's make a Resume
+				</Button>
 			</Link>
 
-			<Button style={{background:"#A7A0A0",fontWeight: "bold"}} onClick={handleShow} className='loginButton'>
+			<Button
+				style={{ background: '#A7A0A0', fontWeight: 'bold' }}
+				onClick={handleShow}
+				className='loginButton'>
 				Log In to Resu.me
 			</Button>
 
-			<h2 className='servicesContainer serviceA'>PLACEHOLDER A</h2>
+{/* <div classname='framertwo'> */}
+			<h2 className='servicesContainer serviceA'><Levels /></h2>
+{/* // </div> */}
 			<h2 className='servicesContainer serviceB'>PLACEHOLDER B</h2>
 			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2>
 			
+
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
@@ -105,7 +123,6 @@ const Homepage = () => {
 
 						<br></br>
 
-
 						<Form.Group controlId='formBasicPassword'>
 							<Form.Label>Password</Form.Label>
 							<Form.Control
@@ -117,7 +134,7 @@ const Homepage = () => {
 							/>
 						</Form.Group>
 						<Button
-							style={{background:"#A7A0A0",fontWeight: "bold"}}
+							style={{ background: '#A7A0A0', fontWeight: 'bold' }}
 							variant='secondary'
 							type='submit'
 							onClick={(event) => {
