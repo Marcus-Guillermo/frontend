@@ -1,11 +1,11 @@
 .generateBody {
     display: grid;
     grid-template-columns: .15fr 2fr .1fr 1.5fr .15fr;
-    grid-template-rows: .25fr .5fr 3fr .5fr;
+    grid-template-rows: .1fr .25fr 3fr .5fr;
 }
 iframe {
     width: 100%;
-    height: 110vh;
+    height: 100vh;
 }
 
 .generateBanner {
@@ -24,20 +24,19 @@ iframe {
 }
 
 .inputField {
-    height: 700px;
+    height: 100vh;
     grid-row-start: 3;
     grid-column-start: 4;
     overflow:scroll;
 }
 
 .bullet {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1%;
 
 }
 
 .formSubHeader {
-    font-size: 40px;
+    font-size: 6vh;
     text-decoration: underline;
-    margin-top: 60px;
+    margin-top: 5%;
 }
