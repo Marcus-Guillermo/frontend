@@ -28,10 +28,9 @@ const SignUp = ({ history }) => {
       <div className="accountsBody">
         <div>
           <Jumbotron className="jumbotron">
-            <h1>Resumes have Never Been Easier</h1>
+            <h1>Getting ready for job applications has never been easier.</h1>
             <p>
-              Join us and start making professional resumes at the push of a
-              button.
+              Join and start making professional cover letters and resumes with ease. <br></br>When you're done, get inspired and look at salary data via Levels.fyi
               <br></br>
             </p>
             <p>

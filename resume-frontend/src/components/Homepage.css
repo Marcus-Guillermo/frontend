@@ -35,6 +35,14 @@
     width: 100%;
  
 }
+.genLeadThreeButton {
+    margin-top: 1%;
+    grid-column-start: 2;
+    grid-row-start: 7;
+    justify-self: end;
+    width: 100%;
+ 
+}
 
 .loginButton {
     /* margin-top: 1%; */

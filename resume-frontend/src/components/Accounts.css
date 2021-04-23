@@ -1,7 +1,7 @@
 
 .accountsBody {
     display: grid;
-    grid-template-columns: .25fr 1fr .25fr 1fr .25fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: .25fr 1fr .25fr 1fr .25fr;
 }
 
