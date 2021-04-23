@@ -7,7 +7,7 @@ const Contact = () => {
     return (
         <div className= "contactBody">
             <div className="guillermo">
-                <Card style={{ width: '48rem' }}>
+                <Card style={{ width: '100%' }}>
                 <Card.Body>
                 <h1>Guillermo Hernandez</h1>
                 <h4>Aspiring Software Engineer, Boston</h4>
@@ -17,7 +17,7 @@ const Contact = () => {
             </Card>
             </div>
             <div className="marcus">
-            <Card style={{ width: '48rem' }}>
+            <Card style={{ width: '100%' }}>
                 <Card.Body>
                 <h1>Marcus Gutierrez</h1>
                 <h4>Aspiring Product Manager, NYC</h4>

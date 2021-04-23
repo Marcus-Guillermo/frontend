@@ -230,6 +230,13 @@ const Generate_Resume = () => {
       setCollegeDate(event.target.value)
   }
 
+
+//   useEffect(() => {
+//     const timeOutId = setTimeout(() => setCollegeDate(collegeDate), 500);
+//     return () => clearTimeout(timeOutId);
+//   }, [collegeDate]);
+
+
    //Modal Controls
    const [show, setShow] = useState(false);
    const handleClose = () => setShow(false);
@@ -361,12 +368,11 @@ const Generate_Resume = () => {
                     </Form.Group>
                     </Form.Row>
                   
-
                     <h2 className="formSubHeader"> Professional Experience - Role C</h2>
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
-                    <Form.Control onChange={onChangeEmployerC} value={employerC} placeholder="Microsoft, etc." />
+                    <Form.Control onBlur={onChangeEmployerC} value={employerC} placeholder="Microsoft, etc." />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Title </Form.Label>
@@ -407,7 +413,7 @@ const Generate_Resume = () => {
                     </Form.Group>
                     </Form.Row>
 
-                    <Button onClick={handleShow} variant="primary">
+                    <Button style={{background:"#A7A0A0",fontWeight: "bold"}} onClick={handleShow} variant="primary">
                         All done!
                     </Button>
                 </Form>
@@ -419,7 +425,7 @@ const Generate_Resume = () => {
                 To save your resume as a PDF, simply click the download icon on the rendered toolbar above the document. It will download to your browser. <br></br>Good luck with your applications!
               </Modal.Body>
               <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
+                <Button style={{background:"#A7A0A0",fontWeight: "bold"}} variant="secondary" onClick={handleClose}>
                   Close
                 </Button> 
             </Modal.Footer>

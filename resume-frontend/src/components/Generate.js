@@ -207,7 +207,7 @@ const Generate = () => {
          
             
 
-          <Button onClick={handleShow} variant="primary">
+          <Button style={{background:"#A7A0A0",fontWeight: "bold"}} onClick={handleShow} variant="primary">
            All done!
           </Button>
         </Form>

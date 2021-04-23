@@ -1,5 +1,7 @@
 import './App.css';
 import { Route, Switch, Link } from 'react-router-dom';
+import { Button, Modal, Form } from 'react-bootstrap';
+
 import Navbar from './components/NavBar';
 import Homepage from './components/Homepage';
 import Generate from './components/Generate';
@@ -20,7 +22,9 @@ function App() {
 				<header className='App-header'>
 					<Navbar></Navbar>
 				</header>
-				<Link to='/'>Home</Link>
+				<Link to='/'>
+				<Button style={{background:"#A7A0A0",fontWeight: "bold"}} className = "custom">Return Home</Button>
+				</Link>
 				<Logout />
 
 				<AuthProvider>
