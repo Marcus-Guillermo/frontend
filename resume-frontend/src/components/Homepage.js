@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 // Firebase Credentials
 import app from '../firebase';
 import background from './img/city.jpg'
-
-import Levels from '../Placeholder/Levels'
+import Levels1 from '../Placeholder/Level1'
+import Levels2 from '../Placeholder/Levels2'
+import Contact from '../Placeholder/Contact'
 
 
 const Homepage = () => {
@@ -50,7 +51,6 @@ const Homepage = () => {
 
 	const handleSubmit = (event) => {
 		handleClose();
-		// signInWithEmailAndPasswordHandler();
 		alert('you\'ve successfully logged in');
 	};
 
@@ -87,11 +87,6 @@ const Homepage = () => {
 				</Button>
 			</Link>
 
-			<Link className='genLeadThreeButton' to='/salary'>
-				<Button style={{ background: '#A7A0A0', fontWeight: 'bold' }}>
-					See Salary Data via Levels.fyi
-				</Button>
-			</Link>
 
 			<Button
 				style={{ background: '#A7A0A0', fontWeight: 'bold' }}
@@ -100,14 +95,17 @@ const Homepage = () => {
 				Log In to Resu.me
 			</Button>
 
-{/* <div classname='framertwo'>
-			<h2 className='servicesContainer serviceA'></h2>
-			<Levels />
-</div> */}
-			<h2 className='servicesContainer serviceB'>PLACEHOLDER B</h2>
-			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2>
-			
+			<div className='framertwo'>
+				<Levels1 />
+			</div>
 
+			<div className='framertwo'>
+				<Levels2 />
+			</div>
+
+			<div className='framertwo'>
+				<Contact />
+			</div>
 
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>

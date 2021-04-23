@@ -85,8 +85,12 @@
 
 }
 
-.container{
-    grid-row-start: 7
+.framertwo{
+    grid-row: 7;
+    height: 70px;
+    justify-self: center;
+    margin-top: 30px;
+    /* background-color: white; */
 }
 
 .grow { transition: all .2s ease-in-out; }

@@ -454,7 +454,7 @@ const Generate_Resume = () => {
             <Text style={styles.entry}>{projectCEntry1}</Text>
             
             {/* Professional Experience */}
-            <Text style={styles.Banner}>PPROFESSIONAL EXPERIENCE</Text>
+            <Text style={styles.Banner}>PROFESSIONAL EXPERIENCE</Text>
             {/* Role A */}
             <Text style={styles.entryHeader}>{employerA}</Text>
             <Text style={styles.date}>{dateA}</Text> 
