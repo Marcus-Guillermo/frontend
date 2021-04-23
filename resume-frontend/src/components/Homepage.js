@@ -4,6 +4,7 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // Firebase Credentials
 import app from '../firebase';
+import background from './img/city.jpg'
 
 const Homepage = () => {
 	const [show, setShow] = useState(false);
@@ -51,7 +52,7 @@ const Homepage = () => {
 	};
 
 	return (
-		<div className='welcomeContainer'>
+		<div className='welcomeContainer' style={{ backgroundImage: `url(${background})` }}>
 			<h1 className='welcomeBanner'>Resu.Me</h1>
 			<h4 className='welcomeMessage'>
 				Resu.me is the easiest solution for cover letters and resumes.
@@ -60,21 +61,21 @@ const Homepage = () => {
 			</h4>
 
 		{/* {!token ? ( */}
-			<Button onClick={handleShow} className='loginButton'>
+			<Button style={{background:"#A7A0A0",fontWeight: "bold"}} onClick={handleShow} className='loginButton'>
 				Log In to Resu.me
 			</Button>
 
 		{/* ) : ( */}
 
 			<Link className='genLeadButton' to='/generate'>
-				<Button>Let's make a Cover Letter</Button>
+				<Button style={{background:"#A7A0A0",fontWeight: "bold"}}>Let's make a Cover Letter</Button>
 			</Link>
 
 			<Link className='genLeadTwoButton' to='/generate-resume'>
-				<Button>Let's make a Resume</Button>
+				<Button style={{background:"#A7A0A0",fontWeight: "bold"}}>Let's make a Resume</Button>
 			</Link>
 
-			<Button onClick={handleShow} className='loginButton'>
+			<Button style={{background:"#A7A0A0",fontWeight: "bold"}} onClick={handleShow} className='loginButton'>
 				Log In to Resu.me
 			</Button>
 
@@ -115,6 +116,7 @@ const Homepage = () => {
 							/>
 						</Form.Group>
 						<Button
+							style={{background:"#A7A0A0",fontWeight: "bold"}}
 							variant='secondary'
 							type='submit'
 							onClick={(event) => {
