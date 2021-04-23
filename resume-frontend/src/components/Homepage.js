@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // Firebase Credentials
 import app from '../firebase';
 import background from './img/city.jpg'
-import Levels from '../Placeholder/Levels'
+import Levels1 from '../Placeholder/Level1'
 import Levels2 from '../Placeholder/Levels2'
 import Contact from '../Placeholder/Contact'
 
@@ -87,11 +87,6 @@ const Homepage = () => {
 				</Button>
 			</Link>
 
-			<Link className='genLeadThreeButton' to='/salary'>
-				<Button style={{ background: '#A7A0A0', fontWeight: 'bold' }}>
-					See Salary Data via Levels.fyi
-				</Button>
-			</Link>
 
 			<Button
 				style={{ background: '#A7A0A0', fontWeight: 'bold' }}
@@ -101,7 +96,7 @@ const Homepage = () => {
 			</Button>
 
 			<div className='framertwo'>
-				<Levels />
+				<Levels1 />
 			</div>
 
 			<div className='framertwo'>
