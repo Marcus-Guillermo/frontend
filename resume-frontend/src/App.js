@@ -12,7 +12,7 @@ import Generate_Resume from './components/Generate_Resume';
 import SignUp from './components/SignUp';
 import { AuthProvider } from './Auth';
 import PrivateRoute from './PrivateRoute';
-import Logout from './auth/Logout'
+// import Logout from './auth/Logout'
 
 function App() {
 	return (
@@ -25,7 +25,7 @@ function App() {
 				<Link to='/'>
 				<Button style={{background:"#A7A0A0",fontWeight: "bold"}} className = "custom">Return Home</Button>
 				</Link>
-				<Logout />
+				
 
 				<AuthProvider>
 					<main>

@@ -95,7 +95,7 @@ const Homepage = () => {
 			</Button>
 
 {/* <div classname='framertwo'> */}
-			<h2 className='servicesContainer serviceA'><Levels /></h2>
+			{/* <h2 className='servicesContainer serviceA'><Levels /></h2> */}
 {/* // </div> */}
 			<h2 className='servicesContainer serviceB'>PLACEHOLDER B</h2>
 			<h2 className='servicesContainer serviceC'>PLACEHOLDER C</h2>
