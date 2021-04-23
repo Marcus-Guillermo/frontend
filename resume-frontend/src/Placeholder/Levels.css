@@ -1,14 +1,19 @@
 .levelsContainer {
     display: grid;
-    grid-template-columns: 2;
+    grid-template-columns: 1fr .25fr 1fr; 
     grid-template-rows: 1;
+    height: 100vh;
+    align-items: center;
 }
 
 .frametest {
-    grid-column-start: 1;
+    grid-column-start: 2;
+    height: 100vh;
 }
 
 .comparison {
-    grid-column-start: 2;
+    grid-column-start: 3;
+    height: 100vh;
+    margin-top: -10%;
 
 }
