@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Generate.css";
-import { Form, Jumbotron, Button, Modal, Col, Row } from "react-bootstrap";
-import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-import ReactPDF from '@react-pdf/renderer';
+import { Form, Button, Modal, Col } from "react-bootstrap";
+import { Page, Text, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 
 
 const Generate = () => {
@@ -163,7 +162,7 @@ const Generate = () => {
           </Form.Row>
           <Form.Row>
           <Form.Group as={Col}  controlId="formGridEmail">
-              <Form.Label> Your Email Address</Form.Label>
+              <Form.Label> Your Email </Form.Label>
               <Form.Control onChange={onChangeEmail} value={email} type="email" placeholder="janedoe@gmail.com" />
             </Form.Group>
 

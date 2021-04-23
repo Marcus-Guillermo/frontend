@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Switch, Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import './Contact.css'
 

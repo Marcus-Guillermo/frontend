@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Form, Jumbotron, Button, Modal, Col, Row } from "react-bootstrap";
-import { Page, Text, View, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-import ReactPDF from '@react-pdf/renderer';
+import React, { useState } from "react";
+import { Form, Button, Modal, Col } from "react-bootstrap";
+import { Page, Text, Document, StyleSheet, PDFViewer } from '@react-pdf/renderer';
 import "./Generate_Resume.css";
-import List from './List'
 
 
 const Generate_Resume = () => {
@@ -115,11 +113,7 @@ const Generate_Resume = () => {
         event.preventDefault()
         setProjectAEntry1(event.target.value)
     }
-    const [projectAEntry2, setProjectAEntry2] = useState("")
-    const onChangeProjectAEntry2 = (event) => {
-        event.preventDefault()
-        setProjectAEntry2(event.target.value)
-    }
+   
     const [projectNameB, setProjectNameB] = useState("")
     const onChangeProjectNameB = (event) => {
         event.preventDefault()
@@ -188,12 +182,12 @@ const Generate_Resume = () => {
   const [employerC, setEmployerC] = useState("")
   const onChangeEmployerC = (event) => {
       event.preventDefault()
-      setEmployerB(event.target.value)
+      setEmployerC(event.target.value)
   }
   const [titleC, setTitleC] = useState("")
   const onChangeTitleC = (event) => {
       event.preventDefault()
-      setTitleB(event.target.value)
+      setTitleC(event.target.value)
   }
   const [dateC, setDateC] = useState("")
   const onChangeDateC = (event) => {
@@ -242,8 +236,6 @@ const Generate_Resume = () => {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
 
-  const [bulletShow, setBulletShow] = useState(false);
-  const handleBullet = () => setBulletShow(true)
 
     return (
         <div className="generateBody">
@@ -266,7 +258,7 @@ const Generate_Resume = () => {
                     <Form.Control onChange={onChangeEmail} value={email} placeholder="example@gmail.com" />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>Cell Number</Form.Label>
+                    <Form.Label>Phone</Form.Label>
                     <Form.Control onChange={onChangeCellNumber} value={cellnumber} placeholder="i.e 505-867-5309" />
                     </Form.Group>
                     </Form.Row>
@@ -276,10 +268,12 @@ const Generate_Resume = () => {
                     <Form.Control onChange={onChangeAddress} value={address} placeholder="i.e. 42 Wallaby Way, Sydney" />
                     </Form.Group>
                     <h2 className="formSubHeader"> Skills and Certifications</h2>
-                    <Form.Group controlId="formGridName">
+
+                    <Form.Group controlId="linkedin">
                     <Form.Label>LinkedIn </Form.Label>
                     <Form.Control onChange={onChangeLinkedIn} value={linkedIn} placeholder="i.e. https://www.linkedin.com/in/exampleperson/" />
                     </Form.Group>
+                   
                     <Form.Group controlId="formGridName">
                     <Form.Label>Certifications </Form.Label>
                     <Form.Control onChange={onChangeCertifications} value={certifications} placeholder="Certifications such as Coursera, EdX, etc"/>
@@ -335,7 +329,7 @@ const Generate_Resume = () => {
                     <Form.Control onChange={onChangeTitleA} value={titleA} placeholder="Engineer"/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>Date Range </Form.Label>
+                    <Form.Label>Dates </Form.Label>
                     <Form.Control onChange={onChangeDateA} value={dateA} placeholder="04/2019 - Present" />
                     </Form.Group>
                     </Form.Row>
@@ -357,14 +351,14 @@ const Generate_Resume = () => {
                     <Form.Control onChange={onChangeTitleB} value={titleB} placeholder="Engineer"/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>Date Range </Form.Label>
+                    <Form.Label>Dates</Form.Label>
                     <Form.Control onChange={onChangeDateB} value={dateB} placeholder="04/2019 - Present" />
                     </Form.Group>
                     </Form.Row>
                     <Form.Row>
                     <Form.Group as={Col} controlId="exampleForm.ControlTextarea1">
                     <Form.Label> Describe your Experience </Form.Label>
-                    <Form.Control onChange={onChangeTitleB} value={experienceB} as="textarea" rows={6} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
+                    <Form.Control onChange={onChangeExperienceB} value={experienceB} as="textarea" rows={6} placeholder="i.e. Engineered a mobile app using React Native to assist students on the job hunt" />
                     </Form.Group>
                     </Form.Row>
                   
@@ -372,14 +366,14 @@ const Generate_Resume = () => {
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Employer </Form.Label>
-                    <Form.Control onBlur={onChangeEmployerC} value={employerC} placeholder="Microsoft, etc." />
+                    <Form.Control onChange={onChangeEmployerC} value={employerC} placeholder="Microsoft, etc." />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
                     <Form.Label>Your Title </Form.Label>
                     <Form.Control onChange={onChangeTitleC} value={titleC} placeholder="Engineer"/>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>Date Range </Form.Label>
+                    <Form.Label>Dates</Form.Label>
                     <Form.Control onChange={onChangeDateC} value={dateC} placeholder="04/2019 - Present" />
                     </Form.Group>
                     </Form.Row>
@@ -404,7 +398,7 @@ const Generate_Resume = () => {
 
                     <Form.Row>
                     <Form.Group as={Col} controlId="formGridName">
-                    <Form.Label>GPA and Major GPA </Form.Label>
+                    <Form.Label>GPA, Major GPA </Form.Label>
                     <Form.Control onChange={onChangeGPAMajorGPA} value={gpaMajorGPA} placeholder="3.7/4.0 ; 3.9/4.0" />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridName">
@@ -473,7 +467,7 @@ const Generate_Resume = () => {
             <Text style={styles.date}>{dateB}</Text> 
             <Text style={styles.headerDetail}>{titleB}</Text>
 
-            <Text style={styles.entry}></Text>
+            <Text style={styles.entry}>{experienceB}</Text>
             {/* Role C */}
             <Text style={styles.entryHeader}>{employerC}</Text>
             <Text style={styles.date}>{dateC}</Text> 

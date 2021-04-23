@@ -14,3 +14,8 @@
   background-attachment: fixed;      
 }
 
+@media only screen and (max-width: 1024px) {
+  .App {
+    background: orange;
+  }
+}

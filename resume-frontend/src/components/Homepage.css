@@ -7,51 +7,44 @@
 }
 
 .welcomeBanner {
-    font-size: 70px;
+    font-size: 15vh;
     grid-column-start: 2;
     grid-row-start: 2;
     color: #F4ECD6;
 }
 
 .genLeadButton {
-    margin-top: 10px;
+    margin-top: 1%;
     grid-column-start: 2;
     grid-row-start: 4;
     justify-self: start;
     width: 100%;
+  
 }
 
 .genLeadTwoButton {
-    margin-top: 10px;
+    margin-top: 1%;
     grid-column-start: 2;
     grid-row-start: 5;
     justify-self: end;
     width: 100%;
-    /* align-items: right; */
+ 
 }
 
 .loginButton {
-    margin-top: 10px;
+    /* margin-top: 1%; */
     grid-column-start: 2;
     grid-row-start: 6;
     color: #F4ECD6;
+    width: 30%;
+    align-self: center;
+    justify-self: center;
 }
-.darken {
-    background-image:
-    linear-gradient (
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 1)
-    )
-    url(./img/city.jpg)
-
-}
-
 
 .welcomeMessage {
     grid-column-start: 2;
     grid-row-start: 3;
     color: #F4ECD6;
-
 }
 
 .servicesBanner { 
@@ -59,8 +52,6 @@
     grid-column-start: 2;
     margin-top: 10%;
     color: #F4ECD6;
-
-    
 }
 .servicesSubBanner {
     grid-row-start: 6;
