@@ -23,14 +23,15 @@ const SignUp = ({ history }) => {
   )
 
   return (
-    <div >
+    <div>
       <h1 className="accountsBanner">Get Started with Resu.Me</h1>
       <div className="accountsBody">
-        <div>
-          <Jumbotron className="jumbotron">
-            <h1>Getting ready for job applications has never been easier.</h1>
+        <div className="informationalPanel">
+          <Jumbotron>
+            <h1>Resumes have Never Been Easier</h1>
             <p>
-              Join and start making professional cover letters and resumes with ease. <br></br>When you're done, get inspired and look at salary data via Levels.fyi
+              Join us and start making professional resumes at the push of a
+              button.
               <br></br>
             </p>
             <p>

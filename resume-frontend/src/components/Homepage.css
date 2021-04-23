@@ -6,6 +6,11 @@
 
 }
 
+.frametest {
+    grid-template-columns: 3;
+    width: 100%;
+}
+
 .welcomeBanner {
     font-size: 15vh;
     grid-column-start: 2;
@@ -26,6 +31,14 @@
     margin-top: 1%;
     grid-column-start: 2;
     grid-row-start: 5;
+    justify-self: end;
+    width: 100%;
+ 
+}
+.genLeadThreeButton {
+    margin-top: 1%;
+    grid-column-start: 2;
+    grid-row-start: 7;
     justify-self: end;
     width: 100%;
  
@@ -71,5 +84,10 @@
     /* color: #F4ECD6; */
 
 }
+
+.container{
+    grid-row-start: 7
+}
+
 .grow { transition: all .2s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
