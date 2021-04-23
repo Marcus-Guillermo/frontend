@@ -17,13 +17,16 @@ const navbar = () => {
                 
 				<Logout />
 
-				<Link to='/contact-us'>
+				<Link to='/'>
+				<Button style={{background:"#A7A0A0",fontWeight: "bold"}} className = "custom">Return Home</Button>
+				</Link>
+				{/* <Link to='/contact-us'>
 					<Button
 						style={{ background: '#A7A0A0', fontWeight: 'bold' }}
 						className='contactButton'>
 						Contact Us
 					</Button>
-				</Link>
+				</Link> */}
 			</div>
 		);
 };

@@ -23,9 +23,7 @@ function App() {
 				<header className='App-header'>
 					<Navbar></Navbar>
 				</header>
-				<Link to='/'>
-				<Button style={{background:"#A7A0A0",fontWeight: "bold"}} className = "custom">Return Home</Button>
-				</Link>
+				
 				
 
 				<AuthProvider>
