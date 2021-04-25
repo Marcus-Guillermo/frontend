@@ -49,13 +49,13 @@ const Homepage = () => {
 
 	const handleSubmit = (event) => {
 		handleClose();
-		alert("you've successfully logged in");
+		alert("Welcome! You've successfully logged in.");
 	};
 
 	return (
 		<div
 			className='welcomeContainer'
-			style={{ background: `url(${background}) no-repeat center center fixed` , height: '100%', backgroundSize: 'cover', paddingBottom: '500px' }}>
+			style={{ background: `url(${background}) no-repeat center center fixed` , height: '100%', backgroundSize: 'cover', paddingBottom: '300px' }}>
 			<h1 className='welcomeBanner'>Resu.Me</h1>
 			<h4 className='welcomeMessage'>
 				Resu.me is the easiest solution for cover letters and resumes.
@@ -105,7 +105,7 @@ const Homepage = () => {
 			</div>
 
 			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
+				<Modal.Header >
 					<Modal.Title>Login</Modal.Title>
 				</Modal.Header>
 
