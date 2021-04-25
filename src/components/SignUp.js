@@ -39,11 +39,15 @@ const SignUp = ({ history }) => {
               </Button>
             </p>
             <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
+              <Modal.Header >
                 <Modal.Title>Benefits of Registering</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                Woohoo, you're reading this text in a modal!
+                Resu.Me is your key to navigating job applications.
+                <br></br>
+                Quickly craft resumes and cover letters using our free template. Download seamlessly to your browser and start applying.
+                <br></br>
+                See salary ranges for tech roles in your area, compare compensation across firms and see what employees at your dream company are earning. 
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
