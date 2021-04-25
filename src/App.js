@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Switch, Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 
 import Navbar from './components/NavBar';
 import Homepage from './components/Homepage';

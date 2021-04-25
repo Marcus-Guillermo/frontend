@@ -4,11 +4,10 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // Firebase Credentials
 import app from '../firebase';
-import background from './img/city.jpg'
-import Levels1 from '../Placeholder/Level1'
-import Levels2 from '../Placeholder/Levels2'
-import Contact from '../Placeholder/Contact'
-
+import background from './img/city.jpg';
+import Levels1 from '../Placeholder/Level1';
+import Levels2 from '../Placeholder/Levels2';
+import Contact from '../Placeholder/Contact';
 
 const Homepage = () => {
 	const [show, setShow] = useState(false);
@@ -18,7 +17,6 @@ const Homepage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
-
 
 	// const [token, setToken] = useState('');
 	// function logout() {
@@ -51,13 +49,13 @@ const Homepage = () => {
 
 	const handleSubmit = (event) => {
 		handleClose();
-		alert('you\'ve successfully logged in');
+		alert("you've successfully logged in");
 	};
 
 	return (
 		<div
 			className='welcomeContainer'
-			style={{ backgroundImage: `url(${background})` }}>
+			style={{ background: `url(${background}) no-repeat center center fixed` , height: '100%', backgroundSize: 'cover', paddingBottom: '500px' }}>
 			<h1 className='welcomeBanner'>Resu.Me</h1>
 			<h4 className='welcomeMessage'>
 				Resu.me is the easiest solution for cover letters and resumes.
@@ -87,7 +85,6 @@ const Homepage = () => {
 				</Button>
 			</Link>
 
-
 			<Button
 				style={{ background: '#A7A0A0', fontWeight: 'bold' }}
 				onClick={handleShow}
@@ -97,13 +94,13 @@ const Homepage = () => {
 
 			<div className='framertwo'>
 				<Levels1 />
-			</div>
+				</div>
 
-			<div className='framertwo'>
+				<div className='framertwo'>
 				<Levels2 />
-			</div>
-
-			<div className='framertwo'>
+</div>
+				
+				<div className='framertwo'>
 				<Contact />
 			</div>
 
@@ -151,12 +148,14 @@ const Homepage = () => {
 					</Form>
 				</Modal.Body>
 				<Modal.Footer>
-                <p>Don't have an account?<Link to='/signup'> Create a new account</Link></p>
-            </Modal.Footer>
+					<p>
+						Don't have an account?
+						<Link to='/signup'> Create a new account</Link>
+					</p>
+				</Modal.Footer>
 			</Modal>
 		</div>
 	);
-
 };
 
 export default Homepage;

@@ -27,10 +27,10 @@ const Levels1 = () => {
 			</Card> */}
 			<iframe
 				src='https://www.payscale.com/salary-calculator/calculator-widget'
-				width='300'
-				height='370'
-				scrolling='no'
-				frameborder='0'
+				style={{width:'auto',
+				height:'42vh',
+				scrolling:'no',
+				frameborder:'0'}}
 			/>
 		</div>
 	);
