@@ -3,16 +3,24 @@
   text-align: center;
   background-color: #F4ECD6;
   background-size: '100%';
+  height: 100%;
+  /* padding-bottom: 500px; */
 }
 
-.body{
+main{
+  height: 100%;
+}
+
+
+
+/* .body{
   background-color: #F4ECD6;
   background-size: cover;             
   background-position: center;
   background-repeat: no-repeat;      
   height: 100vh;
   background-attachment: fixed;      
-}
+} */
 
 @media only screen and (max-width: 1024px) {
   .App {
