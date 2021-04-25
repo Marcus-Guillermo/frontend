@@ -150,6 +150,9 @@ const Homepage = () => {
 						</Button>
 					</Form>
 				</Modal.Body>
+				<Modal.Footer>
+                <p>Don't have an account?<Link to='/signup'> Create a new account</Link></p>
+            </Modal.Footer>
 			</Modal>
 		</div>
 	);
