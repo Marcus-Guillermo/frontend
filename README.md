@@ -1,4 +1,6 @@
-# Welcome to Resu.Me
+
+<img width="566" alt="Screen Shot 2021-04-25 at 9 35 06 PM" src="https://user-images.githubusercontent.com/63027187/116017789-91c08b80-a60e-11eb-83e0-ff62d269f382.png">
+
 
 
 - [Project Deployment via Heroku](https://resume-render21.herokuapp.com/)
@@ -8,13 +10,19 @@
 
 Resu.Me is intented to be a one-stop resume and cover letter destination for aspiring junior-engineers. Via simple text field input, users can quickly create and download professional and well-formatted .pdf resumes and cover letters. As an added bonus, users can find inspiration on their job hunt through Resu.Me's built-in Levels.fyi integrations.
 
-### Resu.Me Rendered Home Page
+### Resu.Me Rendered Home Page:
 
-### Example of a User Generating a Resume
+<img width="1419" alt="Screen Shot 2021-04-25 at 9 23 09 PM" src="https://user-images.githubusercontent.com/63027187/116017109-b0258780-a60c-11eb-9564-51e34bd13373.png">
 
-### Example of a User Generating a Cover Letter
 
-### Component Overview
+### Example of a User Generating a Resume:
+
+<img width="1422" alt="Screen Shot 2021-04-25 at 9 21 26 PM" src="https://user-images.githubusercontent.com/63027187/116016986-56bd5880-a60c-11eb-9822-fda4913e5834.png">
+
+
+### Example of a User Generating a Cover Letter:
+
+<img width="1440" alt="Screen Shot 2021-04-25 at 9 17 32 PM" src="https://user-images.githubusercontent.com/63027187/116016815-c5e67d00-a60b-11eb-8ff1-5782396a735e.png">
 
 
 ## Development Process
@@ -38,6 +46,7 @@ The final deliverable understandably looks discernably different from the wirefr
 ### User Flow Chart
 We developed the follwoing flowchart to model how a user would navigate the application. 
 
+<img width="1079" alt="Screen Shot 2021-04-25 at 9 26 14 PM" src="https://user-images.githubusercontent.com/63027187/116017540-e1eb1e00-a60d-11eb-92a0-5a337f046f53.png">
 
 ### Crafting User Stories:
 As two potential (and probable) users of this application, we believed that we had a good feel for what users of such an application may want to see as features. 
